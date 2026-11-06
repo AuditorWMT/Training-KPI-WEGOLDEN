@@ -1476,7 +1476,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
     document.getElementById('ocSearch').placeholder=L('Tìm tên, vị trí, phòng ban, quốc gia…','Search name, position, department, country…');
     document.getElementById('ocSource').innerHTML=orgLocal
       ?L(`Đang xem dữ liệu từ file bạn vừa tải lên (chỉ hiển thị trên trình duyệt này): sheet <b>${esc(ORG.sheet)}</b>, ${P.length} người.`,`Showing data from the file you uploaded (this browser only): sheet <b>${esc(ORG.sheet)}</b>, ${P.length} people.`)
-      :L(`Nguồn: sheet <b>WG active</b> trong file “${esc(ORG.file)}”, cập nhật ${new Date(ORG.date).toLocaleDateString('vi-VN')}. Sơ đồ chỉ dùng tên, vị trí, cấp bậc, phòng ban, quốc gia và người quản lý; không đưa email, số điện thoại hay mô tả công việc lên trang.`,`Source: <b>WG active</b> sheet of “${esc(ORG.file)}”, updated ${new Date(ORG.date).toLocaleDateString('en-GB')}. The chart only uses name, position, level, department, country and manager; no email, phone or job description is published.`);
+      :'';
     document.getElementById('ocReset').style.display=orgLocal?'':'none';
     applySearch();
   }
