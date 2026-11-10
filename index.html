@@ -646,7 +646,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
   <div class="rolebar"><div><b data-en="Who are you?">Bạn là ai?</b><span class="sub" data-en="Pick your role first. This tab only shows the KPIs for that role.">Chọn vai trò trước. Tab này chỉ hiển thị KPI đúng với vai trò của bạn.</span></div><div class="seg role-seg" role="group"><button type="button" data-role="leader">Sales Leader</button><button type="button" data-role="staff" data-en="Sales Staff">Nhân viên Sales</button></div></div>
   <h2 data-en="Market-Building Sales KPIs">KPI Sale tạo thị trường</h2>
   <p class="purpose" style="max-width:72ch" data-en="Leverage marketing activities to build credibility, strengthen your personal brand, and naturally attract potential clients to support long-term sales growth.">Tận dụng các hoạt động marketing để xây dựng uy tín, phát triển thương hiệu cá nhân và thu hút khách hàng tiềm năng một cách tự nhiên, từ đó hỗ trợ tăng trưởng doanh số bền vững.</p>
-  <p class="lead only-staff" data-en="You are viewing the Market-Building Sales KPIs for <b>Sales Staff</b> (Off Trade is for Sales Leaders only). First read what each KPI requires and how it is scored, then use the calculator at the bottom to estimate this month’s points and salary rate.">Bạn đang xem KPI Sale tạo thị trường dành cho <b>Nhân viên Sales</b> (KPI Off Trade chỉ dành cho Sales Leader). Hãy đọc kỹ yêu cầu và cách chấm điểm của từng KPI trước, sau đó dùng máy tính ở cuối trang để ước tính điểm và tỷ lệ lương tháng này.</p>
+  <p class="lead only-staff" data-en="You are viewing the Market-Building Sales KPIs for <b>Sales Staff</b> (Off Trade is a team KPI assigned and uploaded by the Sales Leader, scored under the Leader). First read what each KPI requires and how it is scored, then use the calculator at the bottom to estimate this month’s points and salary rate.">Bạn đang xem KPI Sale tạo thị trường dành cho <b>Nhân viên Sales</b> (KPI Off Trade là KPI của team, do Sales Leader phân công và chịu trách nhiệm up link, điểm tính cho Leader). Hãy đọc kỹ yêu cầu và cách chấm điểm của từng KPI trước, sau đó dùng máy tính ở cuối trang để ước tính điểm và tỷ lệ lương tháng này.</p>
   <p class="lead only-leader" data-en="You are viewing the Market-Building Sales KPIs for <b>Sales Leaders</b> (Telegram is for Sales Staff only). First read what each KPI requires and how it is scored, then use the calculator at the bottom to estimate this month’s points and salary rate.">Bạn đang xem KPI Sale tạo thị trường dành cho <b>Sales Leader</b> (KPI Telegram chỉ dành cho Nhân viên Sales). Hãy đọc kỹ yêu cầu và cách chấm điểm của từng KPI trước, sau đó dùng máy tính ở cuối trang để ước tính điểm và tỷ lệ lương tháng này.</p>
 
   <div class="block" style="margin-top:28px">
@@ -844,7 +844,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
         <span class="pill" data-en="Net withholding rules">Quy định giữ net</span>
         <h3 style="margin-top:6px" data-en="What withheld Net includes">Net bị giữ gồm những gì</h3>
         <ul class="clean small" data-en="<li><b>Sandbox Net</b> and <b>Pending Net</b></li><li>Net may be retained as collateral to reduce risk</li><li>Pending Net is aggregated and reviewed <b>every 2 months</b></li><li>Once Net is positive and approved → prior months’ Net is reimbursed</li>"><li><b>Net Sandbox</b> và <b>Net chờ xét</b></li><li>Net có thể được giữ lại để thế chân, giảm rủi ro</li><li>Net chờ xét được tổng hợp và xét <b>2 tháng/lần</b></li><li>Khi Net dương và được duyệt → hoàn lại Net các tháng trước</li></ul>
-        <div class="callout" style="margin-top:14px" data-en="<b>Formula:</b> NET = Deposit − Withdraw − Com. Level 1 NET = retail client NET."><b>Công thức:</b> NET = Deposit − Withdraw − Com. NET Level 1 = NET khách lẻ.</div>
+        <div class="callout" style="margin-top:14px" data-en="<b>Formula:</b> NET = Deposit − Withdraw − Com."><b>Công thức:</b> NET = Deposit − Withdraw − Com.</div>
       </div>
   </div>
 
@@ -1058,10 +1058,12 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
   /* Market-Building KPI data (who: leader | staff | all) */
   const KPIS=[
     {id:'offtrade',who:'leader',full:250,bonus:50,mod:'Audit',
-     vi:{name:'KPI Off Trade',purpose:'Leader xuất hiện như chuyên gia: video phân tích tin tức, kỹ thuật, lộ mặt để tạo sự thân thiện và niềm tin với người xem.',platform:'TikTok + Facebook',freq:'5 video/tuần · tối đa 2 video/ngày',
+     vi:{name:'KPI Off Trade',purpose:'KPI của cả team: video phân tích tin tức, kỹ thuật, lộ mặt để tạo sự thân thiện và niềm tin với người xem.',platform:'TikTok + Facebook',
+       note:'<b>KPI Off Trade là KPI cho team, không phải KPI Leader phải tự làm.</b> Leader được tự phân công thành viên trong team thực hiện, miễn sao đạt yêu cầu. <b>Leader chịu trách nhiệm up link bài đăng vào app tính điểm.</b><br><b>Facebook:</b> do Công ty tạo và giao cho CM sử dụng. Sau này CM có nhiệm vụ nhân bản Facebook cho từng Sales Leader.',freq:'5 video/tuần · tối đa 2 video/ngày',
        req:['Video 1 phút – 1 phút 30 (dài hơn cũng được)','Nội dung: phân tích tin tức, phân tích kỹ thuật, nhận định tài chính','Bắt buộc lộ mặt, kể cả livestream','Logo WG (Wegolden / WeMasterTrade) suốt video + outro WG','Hashtag bắt buộc: #Wegolden #WeMasterTrade #WG','Không chứa logo/giao diện Facebook, Instagram, YouTube'],
        score:['5 bài/tuần: 50 điểm','25 bài/tháng: 250 + 50 điểm thưởng','Tuần không đăng: 0 điểm','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Off Trade KPI',purpose:'Leaders appear as experts: news and technical analysis videos, face on camera to build friendliness and trust with viewers.',platform:'TikTok + Facebook',freq:'5 videos/week · max 2 videos/day',
+     en:{name:'Off Trade KPI',purpose:'A team KPI: news and technical analysis videos, face on camera to build friendliness and trust with viewers.',platform:'TikTok + Facebook',
+       note:'<b>Off Trade is a team KPI, not one the Leader must do personally.</b> The Leader may assign team members to do it, as long as the requirements are met. <b>The Leader is responsible for uploading the post links to the scoring app.</b><br><b>Facebook:</b> created by the Company and handed to the CM. Later, the CM is responsible for cloning a Facebook account for each Sales Leader.',freq:'5 videos/week · max 2 videos/day',
        req:['Videos of 1 – 1.5 minutes (longer is fine)','Content: news analysis, technical analysis, financial views','Face on camera is mandatory, including livestreams','WG logo (Wegolden / WeMasterTrade) throughout + WG outro','Required hashtags: #Wegolden #WeMasterTrade #WG','No Facebook, Instagram or YouTube logos/interface'],
        score:['5 posts/week: 50 points','25 posts/month: 250 + 50 bonus points','Week with no posts: 0 points','4 consecutive weeks with no posts: −200']}},
     {id:'telegram',who:'staff',full:200,bonus:0,mod:'Audit',team:true,
@@ -1075,10 +1077,40 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
        score:['Whole team meets it 4 weeks in a row: +200 for the team','Whole team misses it 4 weeks in a row: −200 for the team']}},
     {id:'slogan',who:'all',full:200,bonus:50,mod:'Audit',
      vi:{name:'KPI Slogan',purpose:'Thấm văn hóa và tinh thần WeGolden qua khẩu hiệu, tạo kỷ luật đều đặn mỗi tuần.',platform:'Telegram (app)',freq:'Thứ 2 và Thứ 4, trước 12:00',
-       req:['Quay video đọc khẩu hiệu chính thức của WG, gửi lên ứng dụng','Hô rõ ngày/tháng/năm trong video','Áp dụng cho SC và toàn bộ CTV'],
+       req:['Quay video đọc khẩu hiệu chính thức của WG, gửi lên ứng dụng','Hô rõ ngày/tháng/năm trong video','Áp dụng cho SC và toàn bộ CTV','<b>Nếu app lỗi:</b> phải có video quay lại màn hình App báo lỗi. Có video này team Audit mới ghi chú check thủ công và tính điểm'],
        score:['2 bài/tuần: 50 điểm','8 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
      en:{name:'Slogan KPI',purpose:'Instill WeGolden’s culture and spirit through the slogan, building weekly discipline.',platform:'Telegram (app)',freq:'Monday and Wednesday, before 12:00',
-       req:['Record a video reciting the official WG slogan and upload it to the app','State the date clearly in the video','Applies to SCs and all collaborators'],
+       req:['Record a video reciting the official WG slogan and upload it to the app','State the date clearly in the video','Applies to SCs and all collaborators','<b>If the app fails:</b> you must have a video recording of the app showing the error. Only with this video will the Audit team note a manual check and award the points'],
+       score:['2 posts/week: 50 points','8 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
+    {id:'airdrop',who:'all',full:200,bonus:50,mod:'HR',
+     vi:{name:'KPI Airdrop',purpose:'Tăng lượt xem và độ phủ cho các buổi livestream bằng cách chia sẻ đúng ngày diễn ra.',platform:'Zalo + Facebook',freq:'1 livestream/tuần · Thứ 2 – Thứ 6',
+       req:['Bắt buộc chia sẻ 1 bài livestream trong tuần (Thứ 2 – Thứ 6)','Chia sẻ đúng ngày livestream diễn ra, không chia sẻ ngày khác','<b>Chia sẻ vào Thứ 7, Chủ nhật sẽ không được tính điểm</b>'],
+       score:['Mỗi bài: 50 điểm','4 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
+     en:{name:'Airdrop KPI',purpose:'Increase views and reach of livestreams by sharing on the day they happen.',platform:'Zalo + Facebook',freq:'1 livestream/week · Mon – Fri',
+       req:['Sharing 1 livestream post during the week (Mon – Fri) is mandatory','Share on the livestream day itself, not on other days','<b>Shares on Saturday or Sunday are not scored</b>'],
+       score:['Each post: 50 points','4 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
+    {id:'cultural',who:'all',full:200,bonus:50,mod:'HR',
+     vi:{name:'KPI Cultural',purpose:'Lan tỏa nội dung chính thức về WeGolden qua mạng lưới bạn bè cá nhân của Sale.',platform:'Zalo + Facebook',freq:'1 bài/tuần · chốt 16:00 Thứ 2',
+       req:['Đăng 1 bài “3 sao” từ nhóm văn hóa chính thức của WG (Official Group) trên Telegram/Zalo. Link nhóm mới đang được cập nhật; không dùng link cũ t.me/yeulitefinance','Nội dung và link phải khớp, có hashtag #Wegolden #WeMasterTrade #WG + logo WG','Facebook ≥ 1.000 bạn bè hoặc người theo dõi, bài để Công khai','Dùng Zalo chăm sóc khách; kết bạn Zalo HR','KPI Văn hóa cơ bản: đăng nội dung, ảnh cá nhân về WeGolden (cả khối Hành chính)'],
+       score:['Mỗi bài: 50 điểm','4 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
+     en:{name:'Cultural KPI',purpose:'Spread official WeGolden content through Sales’ personal networks.',platform:'Zalo + Facebook',freq:'1 post/week · cutoff 16:00 Monday',
+       req:['Post one “3-star” post from WG’s official culture group (Official Group) on Telegram/Zalo. The new group link is being updated; do not use the old link t.me/yeulitefinance','Content and link must match, with hashtags #Wegolden #WeMasterTrade #WG + WG logo','Facebook ≥ 1,000 friends or followers, post set to Public','Use Zalo for client care; add HR on Zalo','Basic Culture KPI: post personal content and photos about WeGolden (admin staff too)'],
+       score:['Each post: 50 points','4 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
+    {id:'content',who:'all',full:200,bonus:50,mod:'Audit',
+     vi:{name:'KPI Content',purpose:'Xây thương hiệu cá nhân bằng nội dung tự làm, thu hút người xem mới và khách tiềm năng.',platform:'TikTok + Zalo + Facebook',freq:'Tài chính: 2 video/tuần · Tự do: 4 video/tuần',
+       note:'<b>Cập nhật mới:</b> Sale được chọn 1 trong 2 loại content: <b>Content về tài chính (2 video mỗi tuần)</b> hoặc <b>Content tự do (4 video mỗi tuần)</b>. Sẽ có bot tạo video theo tài liệu hướng dẫn của team Audit để Sale lấy và upload lên TikTok, giúp hạn chế tối đa bị quét nick về nội dung. Các quy định khác giữ như cũ.',
+       req:['Chọn 1 trong 2 loại: Tài chính (2 video/tuần) hoặc Tự do (4 video/tuần)','Video lấy từ bot tạo theo tài liệu hướng dẫn của team Audit, upload lên TikTok','1 clip ngắn ≥ 15 giây + 1 clip dài 1 – 1,5 phút','Bắt buộc lộ mặt chính chủ','Cấm: trùng video Sale khác, reup, slideshow ảnh, lấy video từ Trung Thanh Group','Logo WG không bị che bởi giao diện app + outro WG + hashtag #Wegolden #WeMasterTrade #WG','TikTok ≥ 1.000 follow thật, Facebook ≥ 1.000, Zalo chính chủ','<b>Nhân sự / CTV mới:</b> sau 1 tháng gia nhập, Team Leader mới chính thức kích hoạt áp dụng KPI Content, nên nhân sự mới không bị tính thiếu điểm ở tháng đầu'],
+       score:['Đủ số video/tuần theo loại đã chọn: 50 điểm','Đủ 4 tuần/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
+     en:{name:'Content KPI',purpose:'Build a personal brand with self-made content that attracts new viewers and prospects.',platform:'TikTok + Zalo + Facebook',freq:'Finance: 2 videos/week · Free: 4 videos/week',
+       note:'<b>Latest update:</b> Sales choose 1 of 2 content types: <b>Finance content (2 videos per week)</b> or <b>Free content (4 videos per week)</b>. A bot will generate videos following the Audit team’s guidance document, which Sales take and upload to TikTok to minimize account bans for content. All other rules stay the same.',
+       req:['Choose 1 of 2 types: Finance (2 videos/week) or Free (4 videos/week)','Videos come from the bot built on the Audit team’s guidance document and are uploaded to TikTok','1 short clip ≥ 15 seconds + 1 long clip of 1 – 1.5 minutes','The account owner’s face must appear','Not allowed: duplicating other Sales’ videos, reuploads, photo slideshows, videos from Trung Thanh Group','WG logo not covered by the app interface + WG outro + hashtags #Wegolden #WeMasterTrade #WG','TikTok ≥ 1,000 real followers, Facebook ≥ 1,000, own Zalo account','<b>New staff / collaborators:</b> the Team Leader officially activates the Content KPI only after the first month, so new staff are not penalized for missing points in their first month'],
+       score:['Required videos/week for the chosen type: 50 points','All 4 weeks in the month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
+    {id:'tiktok',who:'all',full:200,bonus:50,mod:'Audit',
+     vi:{name:'KPI TikTok',purpose:'Phủ thương hiệu WG trên TikTok bằng video ngắn, đăng đều đặn.',platform:'TikTok',freq:'2 video/tuần làm việc',
+       req:['<b>Nội dung tự do, không giới hạn nội dung</b>','Tự sáng tạo hoặc dùng nguồn từ Nhóm chính thức (Official Group)','Tối thiểu 10 giây','Bắt buộc logo WG','Hashtag hiện chưa bắt buộc','Bắt buộc lộ mặt'],
+       score:['2 bài/tuần: 50 điểm','8 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
+     en:{name:'TikTok KPI',purpose:'Cover TikTok with the WG brand through short, regular videos.',platform:'TikTok',freq:'2 videos/working week',
+       req:['<b>Free content, no restriction on topic</b>','Original content or material from the Official Group','At least 10 seconds','WG logo is mandatory','Hashtags not yet required','Face on camera is mandatory'],
        score:['2 posts/week: 50 points','8 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
     {id:'tbcompany',who:'all',full:200,bonus:50,mod:'Audit + HR',
      vi:{name:'KPI Teambuilding (công ty tổ chức)',purpose:'Lan tỏa hình ảnh một đội ngũ gắn kết, chuyên nghiệp ra mạng xã hội.',platform:'Zalo + Facebook',freq:'1 bài/tuần',
@@ -1093,35 +1125,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
        score:['Mỗi bài phát sinh: +50 điểm']},
      en:{name:'Teambuilding KPI (Leader-organized)',purpose:'Encourage Leaders to bond their teams proactively, funded by the office KPI bonus pool.',platform:'Zalo',freq:'As it happens',
        req:['Post about joining a teambuilding organized by the SC','Attach receipt and photos, faces visible, uniform/WG logo','Hashtags #WeGolden #TeamBuilding + WG banner','Funded by the office KPI bonus pool'],
-       score:['Each extra post: +50 points']}},
-    {id:'airdrop',who:'all',full:200,bonus:50,mod:'HR',
-     vi:{name:'KPI Airdrop',purpose:'Tăng lượt xem và độ phủ cho các buổi livestream bằng cách chia sẻ đúng ngày diễn ra.',platform:'Zalo + Facebook',freq:'1 livestream/tuần · Thứ 2 – Thứ 6',
-       req:['Chia sẻ 1 bài livestream mỗi tuần','Chia sẻ đúng ngày livestream diễn ra, không chia sẻ ngày khác'],
-       score:['Mỗi bài: 50 điểm','4 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Airdrop KPI',purpose:'Increase views and reach of livestreams by sharing on the day they happen.',platform:'Zalo + Facebook',freq:'1 livestream/week · Mon – Fri',
-       req:['Share 1 livestream post per week','Share on the livestream day itself, not on other days'],
-       score:['Each post: 50 points','4 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
-    {id:'cultural',who:'all',full:200,bonus:50,mod:'HR',
-     vi:{name:'KPI Cultural',purpose:'Lan tỏa nội dung chính thức về WeGolden qua mạng lưới bạn bè cá nhân của Sale.',platform:'Zalo + Facebook',freq:'1 bài/tuần · chốt 16:00 Thứ 2',
-       req:['Đăng 1 bài “3 sao” từ nhóm văn hóa chính thức của WG (Official Group) trên Telegram/Zalo. Link nhóm mới đang được cập nhật; không dùng link cũ t.me/yeulitefinance','Nội dung và link phải khớp, có hashtag #Wegolden #WeMasterTrade #WG + logo WG','Facebook ≥ 1.000 bạn bè hoặc người theo dõi, bài để Công khai','Dùng Zalo chăm sóc khách; kết bạn Zalo HR','KPI Văn hóa cơ bản: đăng nội dung, ảnh cá nhân về WeGolden (cả khối Hành chính)'],
-       score:['Mỗi bài: 50 điểm','4 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Cultural KPI',purpose:'Spread official WeGolden content through Sales’ personal networks.',platform:'Zalo + Facebook',freq:'1 post/week · cutoff 16:00 Monday',
-       req:['Post one “3-star” post from WG’s official culture group (Official Group) on Telegram/Zalo. The new group link is being updated; do not use the old link t.me/yeulitefinance','Content and link must match, with hashtags #Wegolden #WeMasterTrade #WG + WG logo','Facebook ≥ 1,000 friends or followers, post set to Public','Use Zalo for client care; add HR on Zalo','Basic Culture KPI: post personal content and photos about WeGolden (admin staff too)'],
-       score:['Each post: 50 points','4 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
-    {id:'content',who:'all',full:200,bonus:50,mod:'Audit',
-     vi:{name:'KPI Content',purpose:'Xây thương hiệu cá nhân bằng nội dung tự làm, thu hút người xem mới và khách tiềm năng.',platform:'Zalo + Facebook',freq:'2 clip/tuần',
-       req:['1 clip ngắn ≥ 15 giây + 1 clip dài 1 – 1,5 phút','Bắt buộc lộ mặt chính chủ','Nội dung: bắt trend, hài, kiến thức tài chính','Cấm: trùng video Sale khác, reup, slideshow ảnh, lấy video từ Trung Thanh Group','Logo WG không bị che bởi giao diện app + outro WG + hashtag #Wegolden #WeMasterTrade #WG','TikTok ≥ 1.000 follow thật, Facebook ≥ 1.000, Zalo chính chủ','<b>Nhân sự / CTV mới:</b> sau 1 tháng gia nhập, Team Leader mới chính thức kích hoạt áp dụng KPI Content, nên nhân sự mới không bị tính thiếu điểm ở tháng đầu'],
-       score:['2 bài/tuần: 50 điểm','8 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Content KPI',purpose:'Build a personal brand with self-made content that attracts new viewers and prospects.',platform:'Zalo + Facebook',freq:'2 clips/week',
-       req:['1 short clip ≥ 15 seconds + 1 long clip of 1 – 1.5 minutes','The account owner’s face must appear','Content: trends, humor, financial knowledge','Not allowed: duplicating other Sales’ videos, reuploads, photo slideshows, videos from Trung Thanh Group','WG logo not covered by the app interface + WG outro + hashtags #Wegolden #WeMasterTrade #WG','TikTok ≥ 1,000 real followers, Facebook ≥ 1,000, own Zalo account','<b>New staff / collaborators:</b> the Team Leader officially activates the Content KPI only after the first month, so new staff are not penalized for missing points in their first month'],
-       score:['2 posts/week: 50 points','8 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
-    {id:'tiktok',who:'all',full:200,bonus:50,mod:'Audit',
-     vi:{name:'KPI TikTok',purpose:'Phủ thương hiệu WG trên TikTok bằng video ngắn, đăng đều đặn.',platform:'TikTok',freq:'2 video/tuần làm việc',
-       req:['Tự sáng tạo hoặc dùng nguồn từ Nhóm chính thức (Official Group)','Tối thiểu 10 giây','Bắt buộc logo WG','Hashtag hiện chưa bắt buộc','Bắt buộc lộ mặt'],
-       score:['2 bài/tuần: 50 điểm','8 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'TikTok KPI',purpose:'Cover TikTok with the WG brand through short, regular videos.',platform:'TikTok',freq:'2 videos/working week',
-       req:['Original content or material from the Official Group','At least 10 seconds','WG logo is mandatory','Hashtags not yet required','Face on camera is mandatory'],
-       score:['2 posts/week: 50 points','8 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}}
+       score:['Each extra post: +50 points']}}
   ];
   const T=k=>k[lang];
   const applies=k=>k.who==='all'||k.who===role;
@@ -1140,10 +1144,11 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
       </summary>
       <div class="kpi-body">
         ${t.warn?`<div class="callout bad small" style="grid-column:1/-1">${t.warn}</div>`:''}
+        ${t.note?`<div class="callout teal small" style="grid-column:1/-1">${t.note}</div>`:''}
         <div><h4>${L('Yêu cầu','Requirements')}</h4><ul class="clean small">${t.req.map(r=>`<li>${r}</li>`).join('')}</ul></div>
         <div>
           <h4>${L('Cách chấm điểm','Scoring')}</h4><ul class="clean small">${t.score.map(r=>`<li>${r}</li>`).join('')}</ul>
-          <div class="facts" style="margin-top:12px"><span class="pill">${t.freq}</span><span class="pill teal">${t.platform}</span><span class="pill gold">${whoLabel(k.who)}</span><span class="pill">${L('Kiểm duyệt','Reviewed by')}: ${k.mod}</span></div>
+          <div class="facts" style="margin-top:12px"><span class="pill">${t.freq}</span><span class="pill teal">${t.platform}</span><span class="pill gold">${k.id==='offtrade'?L('KPI team · Leader up link','Team KPI · Leader uploads links'):whoLabel(k.who)}</span><span class="pill">${L('Kiểm duyệt','Reviewed by')}: ${k.mod}</span></div>
         </div>
       </div>
     </details>`;}).join('');
