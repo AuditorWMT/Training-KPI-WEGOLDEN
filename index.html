@@ -74,6 +74,8 @@ nav.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin:0;padd
 .prob{display:flex;gap:10px;align-items:flex-start;background:var(--good-soft);border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:.9rem;cursor:pointer}
 .prob input{margin-top:4px;accent-color:var(--good)}
 .calc-row select:disabled,.panel select:disabled{opacity:.5}
+.steps4.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.steps4.three{grid-template-columns:1fr}}
 .subpane{display:none}.subpane.on{display:block}
 .oc-card.wide{grid-column:1/-1}
 .oc-list.grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
@@ -98,11 +100,11 @@ h2{font-size:clamp(1.6rem,3.6vw,2.4rem);line-height:1.15;letter-spacing:-.02em;m
 h3{font-size:1.3rem;line-height:1.25;margin:0 0 6px;font-weight:800;letter-spacing:-.01em}
 h4{font-size:1.02rem;margin:0 0 4px;font-weight:700}
 p{margin:0 0 12px}
-.lead{font-size:1.1rem;color:var(--ink-2);max-width:70ch}
+.lead{font-size:1.1rem;color:var(--ink-2)}
 .muted{color:var(--ink-2)}
 .small{font-size:.88rem}
 .block{margin-top:48px}
-.block > .intro{max-width:72ch;margin-bottom:18px}
+.block > .intro{margin-bottom:18px}
 
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -210,7 +212,7 @@ ul.clean li{margin:3px 0}
 @media (max-width:980px){.rec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:480px){.rec-grid{grid-template-columns:1fr}}
 .rec{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
-.rec .ic{width:38px;height:38px;border-radius:10px;background:var(--good-soft);color:var(--good);display:grid;place-items:center;font-weight:900;font-size:1.15rem;margin-bottom:10px}
+.rec .ic{width:40px;height:40px;border-radius:10px;background:var(--good-soft);color:var(--good);display:grid;place-items:center;margin-bottom:10px}
 .rec h4{font-size:.98rem;line-height:1.3}
 .rec p{font-size:.86rem;color:var(--ink-2);margin:4px 0 0}
 .ov-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -240,6 +242,51 @@ ul.clean li{margin:3px 0}
 .sc-steps .amt.bad{color:var(--bad)}
 .sc-steps .amt.muted2{color:var(--ink-2)}
 .track .s-days{background:color-mix(in srgb,var(--ink-2) 25%,var(--sunk))}
+.orgx{display:flex;flex-direction:column;gap:10px}
+.ob{display:grid;grid-template-columns:130px 1fr;gap:14px;border-radius:16px;padding:14px;border:1.5px solid}
+.ob.ho{background:color-mix(in srgb,var(--gold-soft) 70%,var(--surface));border-color:color-mix(in srgb,var(--gold) 45%,transparent)}
+.ob.lm{background:color-mix(in srgb,var(--teal-soft) 70%,var(--surface));border-color:color-mix(in srgb,var(--teal) 35%,transparent)}
+.ob-lab{display:flex;flex-direction:column;justify-content:center;border-radius:12px;padding:12px;background:var(--surface)}
+.ob.ho .ob-lab{background:var(--gold-soft)}
+.ob.lm .ob-lab{background:var(--teal-soft)}
+.ob-lab b{font-size:1.15rem;font-weight:900;line-height:1.1;letter-spacing:.02em}
+.ob-lab small{color:var(--ink-2);font-size:.8rem;margin-top:6px}
+.ob-rows{display:flex;flex-direction:column;gap:12px}
+.orow{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center}
+.orow.mid{grid-template-columns:130px 200px 1fr;padding:0 14px}
+.orow.mid::before{content:""}
+.olv{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;line-height:1.3;text-align:left}
+.olv .lvp{display:inline-block;font-size:.72rem;font-weight:800;background:var(--gold);color:#3B2C00;border-radius:999px;padding:1px 9px;margin-bottom:4px}
+.ob.lm .olv .lvp{background:var(--teal);color:var(--on-teal)}
+.olv b{display:block;font-size:.9rem}
+.olv small{display:block;font-size:.76rem;color:var(--ink-2)}
+.onodes{display:flex;justify-content:center;gap:10px}
+.onodes.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.onodes.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:620px;margin:0 auto;width:100%}
+.onodes.col{flex-direction:column;align-items:center;gap:2px}
+.onode{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;text-align:center;line-height:1.3;min-width:0}
+.onode b{display:block;font-size:1rem}
+.onode span{display:block;font-size:.78rem;color:var(--ink-2)}
+.onode.bod{border-color:var(--gold);border-width:2px;min-width:240px}
+.onode.bod b,.onode.bd b,.onode.cm b{font-size:1.4rem;font-weight:900}
+.onode.bd{background:var(--gold);border-color:var(--gold);min-width:260px}
+.onode.bd span{color:#3B2C00}.onode.bd b{color:#3B2C00}
+.onode.cm{border-color:var(--teal);border-width:2px;min-width:240px}
+.onode.c-rose{background:var(--rose-soft);border-color:color-mix(in srgb,var(--rose) 40%,transparent)}
+.onode.c-blue{background:var(--teal-soft);border-color:color-mix(in srgb,var(--teal) 35%,transparent)}
+.onode.c-green{background:var(--good-soft);border-color:color-mix(in srgb,var(--good) 35%,transparent)}
+.onode.c-lav{background:var(--lav-soft);border-color:color-mix(in srgb,var(--lav) 40%,transparent)}
+.onode.you{border-color:var(--gold);border-width:2px}
+.onode em{font-style:normal;margin-top:6px}
+.oar{font-size:1.2rem;font-weight:900;color:var(--ink-2);line-height:1}
+@media (max-width:980px){.onodes.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){
+  .ob{grid-template-columns:1fr}
+  .orow,.orow.mid{grid-template-columns:1fr;padding:0}
+  .orow.mid::before{display:none}
+  .onode.bod,.onode.bd,.onode.cm{min-width:0;width:100%}
+}
+@media (max-width:420px){.onodes.four,.onodes.two{grid-template-columns:1fr}}
 .lstruct{display:flex;flex-direction:column;align-items:center;gap:6px}
 .lstruct .ln{border:1.5px solid var(--line);border-radius:12px;padding:10px 16px;text-align:center;background:var(--surface);width:min(100%,380px)}
 .lstruct .ln b{display:block}
@@ -322,6 +369,17 @@ details.kpi summary::-webkit-details-marker{display:none}
 .kpi-pts small{display:block;font-weight:600;font-size:.75rem;color:var(--good)}
 details.kpi[open] summary{border-bottom:1px solid var(--line);background:var(--sunk)}
 .kpi-body{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.kpi-body.kb3{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.kpi-body.kb3 > div{background:var(--sunk);border-radius:10px;padding:12px 14px}
+@media (max-width:900px){.kpi-body.kb3{grid-template-columns:1fr}}
+.kbh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.kbn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:.75rem;font-weight:800}
+.t3grp{display:flex;align-items:flex-start;gap:12px;border-radius:12px;padding:12px 14px;margin:6px 0 2px}
+.t3grp.sal{background:var(--teal-soft)}
+.pill.teal2{background:var(--lav-soft);color:var(--lav)}
+.t3grp.net{background:var(--gold-soft);margin-top:18px}
+.t3grp b{display:block;font-size:1.02rem}
+.t3grp span{font-size:.86rem;color:var(--ink-2)}
 @media (max-width:760px){.kpi-body{grid-template-columns:1fr}.kpi-pts{font-size:1rem}}
 .chev{transition:transform .2s;display:inline-block}
 details[open] .chev{transform:rotate(90deg)}
@@ -591,42 +649,65 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
   </div>
 
   <div class="block">
-    <div class="intro"><h3 data-en="How your salary is calculated">Lương được tính như thế nào</h3><p class="muted" data-en="Salary is calculated <b>in sequence</b>: the Market-Building Sales KPI is applied first, then actual working days, and the Net KPI withholding last.">Lương được tính <b>lần lượt theo thứ tự</b>: áp dụng KPI Sale tạo thị trường trước, sau đó đến ngày công thực tế, và cuối cùng là phần giữ lương theo KPI Net.</p></div>
-    <div class="steps4">
-      <div class="step s1"><div class="no">1</div><h4 data-en="Market-Building Sales KPI">KPI Sale tạo thị trường</h4><div class="fx" data-en="Base salary × Market-Building salary rate = <b>Adjusted base salary</b>">Lương cơ bản × Tỷ lệ lương KPI tạo thị trường = <b>Lương cơ bản điều chỉnh</b></div><p class="nt" data-en="Rate from the fixed tiers: 0%, 25%, 50%, 75%, 100%.">Tỷ lệ theo bậc cố định: 0%, 25%, 50%, 75%, 100%.</p></div>
-      <div class="step"><div class="no">2</div><h4 data-en="Actual working days">Ngày công thực tế</h4><div class="fx" data-en="Adjusted base × (Paid working days ÷ Standard working days) = <b>Actual earned salary</b>">Lương điều chỉnh × (Ngày công được trả ÷ Ngày công chuẩn) = <b>Lương thực tế</b></div><p class="nt" data-en="Based on approved attendance.">Theo chấm công đã được duyệt.</p></div>
-      <div class="step s3"><div class="no">3</div><h4 data-en="Net KPI withholding">Giữ lương theo KPI Net</h4><div class="fx" data-en="Actual earned salary × Net withholding rate = <b>Net hold amount</b>">Lương thực tế × Tỷ lệ giữ lương Net = <b>Khoản giữ lại</b></div><p class="nt" data-en="Recorded by HR; may be recovered later.">HR ghi nhận, có thể được hoàn lại sau.</p></div>
-      <div class="step s4"><div class="no">4</div><h4 data-en="Final monthly salary">Lương tháng</h4><div class="fx" data-en="Actual earned salary − Net hold amount = <b>Final salary</b>">Lương thực tế − Khoản giữ lại = <b>Lương thực nhận</b></div><p class="nt" data-en="Before any other payroll adjustments.">Trước các điều chỉnh payroll khác.</p></div>
+    <div class="intro"><h3 data-en="How your salary is calculated: the official 3-step process">Lương được tính thế nào: quy trình 3 bước chính thức</h3><p class="muted" data-en="Salary is calculated <b>in this order</b>: the Market-Building Sales KPI first, then actual working days, then withholding under the Sales KPI (Standard IB / Retail Client).">Lương được tính <b>lần lượt theo thứ tự</b>: KPI Sale tạo thị trường trước, sau đó đến ngày công thực tế, cuối cùng là giữ lương theo KPI Sales (IB chuẩn / khách lẻ).</p></div>
+    <div class="steps4 three">
+      <div class="step s1"><div class="no">1</div><h4 data-en="Market-Building KPI → actual base salary">KPI Sale tạo thị trường → Lương cơ bản thực tế</h4><div class="fx" data-en="Agreed base salary × Market-Building % = <b>Actual base salary</b>">Lương cơ bản thỏa thuận × % KPI tạo thị trường = <b>Lương cơ bản thực tế</b></div><p class="nt" data-en="Fixed tiers: 0%, 25%, 50%, 75%, 100%. Points above the benchmark earn an extra bonus.">Bậc cố định: 0%, 25%, 50%, 75%, 100%. Vượt điểm trên app được thêm bonus.</p></div>
+      <div class="step"><div class="no">2</div><h4 data-en="Working days → actual salary">Ngày công → Lương thực tế</h4><div class="fx" data-en="Actual base salary × (Actual working days ÷ Standard working days) = <b>Actual salary</b>">Lương cơ bản thực tế × (Ngày công thực tế ÷ Ngày công quy định) = <b>Lương thực tế</b></div><p class="nt" data-en="Based on approved attendance.">Theo chấm công đã được duyệt.</p></div>
+      <div class="step s3"><div class="no">3</div><h4 data-en="Sales KPI withholding → salary paid">Giữ lương theo KPI Sales → Lương thực trả</h4><div class="fx" data-en="Actual salary × Hold % (20/30/50%) = <b>Hold amount</b><br>Actual salary − Hold amount = <b>Salary paid</b>">Lương thực tế × % giữ (20/30/50%) = <b>Khoản giữ lại</b><br>Lương thực tế − Khoản giữ = <b>Lương thực trả</b></div><p class="nt" data-en="Applies only when the Sales KPI is missed. HR records the hold; it may be recovered later.">Chỉ áp dụng khi trượt KPI Sales. HR ghi nhận khoản giữ, có thể được hoàn lại sau.</p></div>
+    </div>
+    <div class="formula">
+      <div class="lab" data-en="Take-home pay at month-end">Lương thực nhận cuối tháng</div>
+      <div class="f"><span data-en="Take-home pay">Lương thực nhận</span><span class="op">=</span><span class="t" data-en="Salary paid (step 3)">Lương thực trả (bước 3)</span><span class="op">+</span><span class="t nt" data-en="Net Commission (when approved)">Hoa hồng Net (khi được duyệt)</span></div>
     </div>
     <div class="diff" style="margin-top:16px">
       <div class="d lost"><div class="ic" aria-hidden="true">✕</div><div><h4 data-en="Step 1 · Market-Building KPI: not earned, not recoverable">Bước 1 · KPI tạo thị trường: không đạt thì không được nhận</h4><p class="small" style="margin:0" data-en="The portion lost because of insufficient market-building points is <b>not earned, not withheld and not recoverable</b>.">Phần lương mất do thiếu điểm tạo thị trường là <b>không được nhận, không bị giữ, không hoàn lại</b>.</p></div></div>
-      <div class="d back"><div class="ic" aria-hidden="true">↺</div><div><h4 data-en="Step 3 · Net: withheld, can be recovered">Bước 3 · Net: bị giữ lại, có thể lấy lại</h4><p class="small" style="margin:0" data-en="Only the Net hold amount is recorded as withheld salary, and may be <b>recovered</b> through the eligible recovery benefits.">Chỉ khoản giữ theo KPI Net được ghi nhận là lương bị giữ, và có thể <b>được hoàn lại</b> qua các quyền lợi phục hồi nếu đủ điều kiện.</p></div></div>
+      <div class="d back"><div class="ic" aria-hidden="true">↺</div><div><h4 data-en="Step 3 · Sales KPI: withheld, can be recovered">Bước 3 · KPI Sales: bị giữ lại, có thể lấy lại</h4><p class="small" style="margin:0" data-en="Only the Net hold amount is recorded as withheld salary, and may be <b>recovered</b> through the eligible salary recovery mechanisms.">Chỉ khoản giữ theo KPI Net được ghi nhận là lương bị giữ, và có thể <b>được hoàn lại</b> qua các cơ chế phục hồi lương nếu đủ điều kiện.</p></div></div>
     </div>
     <div class="callout teal" style="margin-top:16px" data-en="<b>Missing both KPIs does not automatically mean 0% salary.</b> The result depends on your actual Market-Building salary tier and the Net withholding level that applies. The Net hold is always calculated on the salary after Steps 1 and 2, never on the original base salary."><b>Trượt cả hai KPI không có nghĩa là tự động nhận 0% lương.</b> Kết quả phụ thuộc vào bậc lương KPI tạo thị trường thực tế và mức giữ lương Net đang áp dụng. Khoản giữ Net luôn tính trên lương sau bước 1 và 2, không bao giờ tính trên lương cơ bản gốc.</div>
     <div style="margin-top:14px"><a class="btn-link ghost" href="#luong-net"><span data-en="See a worked example and salary calculator in tab 3">Xem ví dụ và máy tính lương ở tab 3</span> →</a></div>
   </div>
 
   <div class="block">
-    <div class="intro"><h3 data-en="Benefits: Recovery &amp; Protection">Quyền lợi: phục hồi &amp; bảo vệ lương</h3><p class="muted" data-en="These are <b>employee benefits</b>, not KPIs: they help you avoid withholding or recover withheld salary. You don’t have to “hit” them every month.">Đây là <b>quyền lợi dành cho nhân sự</b>, không phải KPI: giúp bạn tránh bị giữ lương hoặc lấy lại phần đã bị giữ. Bạn không phải “đạt” chúng mỗi tháng.</p></div>
+    <div class="intro"><h3 data-en="Salary recovery &amp; protection">Cơ chế phục hồi &amp; bảo vệ lương</h3><p class="muted" data-en="These are <b>support mechanisms for employees</b>, not KPIs: they help you avoid withholding or recover withheld salary. You don’t have to “hit” them every month.">Đây là <b>cơ chế hỗ trợ nhân sự</b>, không phải KPI: giúp bạn tránh bị giữ lương hoặc lấy lại phần đã bị giữ. Bạn không phải “đạt” chúng mỗi tháng.</p></div>
     <div class="rec-grid">
-      <div class="rec"><div class="ic" aria-hidden="true">Q</div><h4 data-en="Quarterly KPI Recovery">Phục hồi theo quý</h4><p data-en="Strong results within a quarter can recover salary withheld in that quarter.">Kết quả tốt trong quý giúp lấy lại lương đã bị giữ của quý đó.</p></div>
-      <div class="rec"><div class="ic" aria-hidden="true">Y</div><h4 data-en="Annual KPI Recovery">Phục hồi theo năm</h4><p data-en="Strong results across the year can recover salary withheld during the year.">Kết quả tốt cả năm giúp lấy lại lương đã bị giữ trong năm.</p></div>
-      <div class="rec"><div class="ic" aria-hidden="true">7</div><h4 data-en="7th Team Member Program">Chương trình thành viên thứ 7</h4><span class="pill gold" style="margin-top:4px" data-en="Leaders only">Chỉ Leader</span><p data-en="When the team’s 7th member actually hits their KPI, the Leader is credited with the Standard IB KPI.">Khi thành viên thứ 7 của team thực sự đạt KPI, Leader được tính đạt KPI IB chuẩn.</p></div>
-      <div class="rec"><div class="ic" aria-hidden="true">S</div><h4 data-en="Standby Program">Chương trình Standby</h4><p data-en="Protects committed employees from withholding in a month when the KPI is missed.">Bảo vệ nhân sự gắn bó khỏi bị giữ lương trong tháng trượt KPI.</p></div>
+      <div class="rec"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v9h9"/><path d="M12 12 L12 3 A9 9 0 0 1 21 12 Z" fill="currentColor" fill-opacity=".25" stroke="none"/></svg></div><h4 data-en="Quarterly KPI Recovery">Phục hồi theo quý</h4><p data-en="Strong results within a quarter can recover salary withheld in that quarter.">Kết quả tốt trong quý giúp lấy lại lương đã bị giữ của quý đó.</p></div>
+      <div class="rec"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="M8 14h2M14 14h2M8 17h2M14 17h2"/></svg></div><h4 data-en="Annual KPI Recovery">Phục hồi theo năm</h4><p data-en="Strong results across the year can recover salary withheld during the year.">Kết quả tốt cả năm giúp lấy lại lương đã bị giữ trong năm.</p></div>
+      <div class="rec"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M19 8v6M16 11h6"/></svg></div><h4 data-en="7th Team Member Program">Chương trình thành viên thứ 7</h4><span class="pill gold" style="margin-top:4px" data-en="Leaders only">Chỉ Leader</span><p data-en="When the team’s 7th member actually hits their KPI, the Leader is credited with the Standard IB KPI.">Khi thành viên thứ 7 của team thực sự đạt KPI, Leader được tính đạt KPI IB chuẩn.</p></div>
+      <div class="rec"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div><h4 data-en="Standby Program">Chương trình Standby</h4><p data-en="Protects committed employees from withholding in a month when the KPI is missed.">Bảo vệ nhân sự gắn bó khỏi bị giữ lương trong tháng trượt KPI.</p></div>
     </div>
     <div style="margin-top:14px"><a class="btn-link ghost" href="#luong-net"><span data-en="See eligibility details in tab 3">Xem điều kiện chi tiết ở tab 3</span> →</a></div>
   </div>
 
   <div class="block">
-    <div class="intro"><h3 data-en="General structure in each local market">Cấu trúc chung tại mỗi thị trường local</h3><p class="muted" data-en="Sales work within the structure below. Detailed structure and the role of each department are covered in the Playbook and the training portal.">Sales làm việc trong cấu trúc dưới đây. Chi tiết cơ cấu và vai trò từng bộ phận có trong Playbook và Portal training.</p></div>
-    <div class="panel lstruct">
-      <div class="ln bd"><b>BD · Business Development</b><span data-en="Oversees local markets; reports to Head Office">Quản lý các thị trường local, báo cáo Head Office</span></div>
-      <div class="ar" aria-hidden="true">↓</div>
-      <div class="ln cm"><b>CM · Country Manager</b><span data-en="Manages the Sales &amp; Support team in each country">Quản lý team Sales &amp; Support tại mỗi quốc gia</span></div>
-      <div class="ar" aria-hidden="true">↓</div>
-      <div class="pairs">
-        <div class="ln sl"><b>Sales</b><span data-en="Sales Leader &amp; Sales Staff · work with IBs, partners and clients">Sales Leader &amp; Nhân viên Sales · làm việc với IB, đối tác, khách hàng</span></div>
-        <div class="ln sp"><b>Support local</b><span data-en="Support clients and Sales in the local language">Hỗ trợ khách hàng và Sales bằng ngôn ngữ địa phương</span></div>
+    <div class="intro"><h3 data-en="WG (We Golden) organizational structure">Cơ cấu tổ chức WG (We Golden)</h3><p class="muted" data-en="Five levels, split between the Head Office (global management) and each Local Market (each country / AP). Sales sit at Level 5. Details of each department are covered in the Playbook and the training portal.">Gồm 5 cấp, chia thành Head Office (quản lý toàn cầu) và Local Market (từng quốc gia / AP). Sales nằm ở Level 5. Chi tiết từng bộ phận có trong Playbook và Portal training.</p></div>
+    <div class="orgx">
+      <div class="ob ho">
+        <div class="ob-lab"><b>HEAD OFFICE</b><small data-en="Global management">Quản lý toàn cầu</small></div>
+        <div class="ob-rows">
+          <div class="orow"><div class="olv"><span class="lvp">Level 1</span><b data-en="Top Management">Ban lãnh đạo</b><small data-en="Overall direction and decision making">Định hướng tổng thể, ra quyết định</small></div>
+            <div class="onodes"><div class="onode bod"><b>BOD</b><span>Board of Directors</span><span>(CEO / Management)</span></div></div></div>
+          <div class="orow"><div class="olv"><span class="lvp">Level 2</span><b data-en="Head Office Departments">Phòng ban Head Office</b><small data-en="Provide global support and management">Hỗ trợ và quản lý toàn cầu</small></div>
+            <div class="onodes four">
+              <div class="onode c-rose"><b>Audit / Assistance</b><span data-en="Audit, compliance, assistant tasks">Kiểm toán, tuân thủ, công việc trợ lý</span></div>
+              <div class="onode c-blue"><b>SP Global</b><span data-en="Global customer support">Hỗ trợ khách hàng toàn cầu</span></div>
+              <div class="onode c-green"><b>Marketing, IT</b><span data-en="Marketing activities and IT support">Hoạt động marketing và hỗ trợ IT</span></div>
+              <div class="onode c-lav"><b data-en="Others">Khác</b><span data-en="Other supporting departments">Các phòng ban hỗ trợ khác</span></div>
+            </div></div>
+        </div>
+      </div>
+      <div class="orow mid"><div class="olv"><span class="lvp">Level 3</span><b>Business Development</b><small data-en="Oversees local markets, coordinates with CMs">Giám sát thị trường local, phối hợp với CM</small></div>
+        <div class="onodes col"><div class="oar" aria-hidden="true">↑</div><div class="onode bd"><b>BD</b><span>Business Development</span><span data-en="Manages local markets and reports to BOD">Quản lý thị trường local, báo cáo BOD</span></div><div class="oar" aria-hidden="true">↓</div></div></div>
+      <div class="ob lm">
+        <div class="ob-lab"><b>LOCAL MARKET</b><small data-en="Each country / each AP">Từng quốc gia / từng AP</small></div>
+        <div class="ob-rows">
+          <div class="orow"><div class="olv"><span class="lvp">Level 4</span><b data-en="Country Management">Quản lý quốc gia</b><small data-en="Manages Sales and Support in each local market">Quản lý Sales và Support tại mỗi thị trường</small></div>
+            <div class="onodes"><div class="onode cm"><b>CM</b><span>Country Manager</span><span data-en="Reports to BD · manages the Sales &amp; Support team">Báo cáo BD · quản lý team Sales &amp; Support</span></div></div></div>
+          <div class="orow"><div class="olv"><span class="lvp">Level 5</span><b data-en="Execution Team">Đội thực thi</b><small data-en="Directly handle sales and customer support">Trực tiếp bán hàng và hỗ trợ khách hàng</small></div>
+            <div class="onodes two">
+              <div class="onode c-rose you"><b>Sales</b><span data-en="Local sales team (IB / Partners / Clients)">Đội sales local (IB / Đối tác / Khách hàng)</span><em class="pill gold" data-en="You are here">Bạn ở đây</em></div>
+              <div class="onode c-green"><b>Support</b><span data-en="Local customer support team, handles inquiries in the local language">Đội hỗ trợ khách hàng local, xử lý yêu cầu bằng ngôn ngữ địa phương</span></div>
+            </div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -645,22 +726,22 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
 <section class="view" id="v-marketing">
   <div class="rolebar"><div><b data-en="Who are you?">Bạn là ai?</b><span class="sub" data-en="Pick your role first. This tab only shows the KPIs for that role.">Chọn vai trò trước. Tab này chỉ hiển thị KPI đúng với vai trò của bạn.</span></div><div class="seg role-seg" role="group"><button type="button" data-role="leader">Sales Leader</button><button type="button" data-role="staff" data-en="Sales Staff">Nhân viên Sales</button></div></div>
   <h2 data-en="Market-Building Sales KPIs">KPI Sale tạo thị trường</h2>
-  <p class="purpose" style="max-width:72ch" data-en="Leverage marketing activities to build credibility, strengthen your personal brand, and naturally attract potential clients to support long-term sales growth.">Tận dụng các hoạt động marketing để xây dựng uy tín, phát triển thương hiệu cá nhân và thu hút khách hàng tiềm năng một cách tự nhiên, từ đó hỗ trợ tăng trưởng doanh số bền vững.</p>
-  <p class="lead only-staff" data-en="You are viewing the Market-Building Sales KPIs for <b>Sales Staff</b> (Off Trade is a team KPI assigned and uploaded by the Sales Leader, scored under the Leader). First read what each KPI requires and how it is scored, then use the calculator at the bottom to estimate this month’s points and salary rate.">Bạn đang xem KPI Sale tạo thị trường dành cho <b>Nhân viên Sales</b> (KPI Off Trade là KPI của team, do Sales Leader phân công và chịu trách nhiệm up link, điểm tính cho Leader). Hãy đọc kỹ yêu cầu và cách chấm điểm của từng KPI trước, sau đó dùng máy tính ở cuối trang để ước tính điểm và tỷ lệ lương tháng này.</p>
-  <p class="lead only-leader" data-en="You are viewing the Market-Building Sales KPIs for <b>Sales Leaders</b> (Telegram is for Sales Staff only). First read what each KPI requires and how it is scored, then use the calculator at the bottom to estimate this month’s points and salary rate.">Bạn đang xem KPI Sale tạo thị trường dành cho <b>Sales Leader</b> (KPI Telegram chỉ dành cho Nhân viên Sales). Hãy đọc kỹ yêu cầu và cách chấm điểm của từng KPI trước, sau đó dùng máy tính ở cuối trang để ước tính điểm và tỷ lệ lương tháng này.</p>
+  <p class="purpose" data-en="Leverage marketing activities to build credibility, strengthen your personal brand, and naturally attract potential clients to support long-term sales growth.">Tận dụng các hoạt động marketing để xây dựng uy tín, phát triển thương hiệu cá nhân và thu hút khách hàng tiềm năng một cách tự nhiên, từ đó hỗ trợ tăng trưởng doanh số bền vững.</p>
+  <p class="lead only-staff" data-en="You are viewing the Market-Building Sales KPIs for <b>Sales Staff</b> (Off Trade is a whole-team KPI: members make the videos and the Sales Leader submits the links). First read what each KPI requires and how it is scored, then use the calculator at the bottom to estimate this month’s points and salary rate.">Bạn đang xem KPI Sale tạo thị trường dành cho <b>Nhân viên Sales</b> (KPI Off Trade là KPI chung của cả team: thành viên làm video, Sales Leader nộp link). Hãy đọc kỹ yêu cầu và cách chấm điểm của từng KPI trước, sau đó dùng máy tính ở cuối trang để ước tính điểm và tỷ lệ lương tháng này.</p>
+  <p class="lead only-leader" data-en="You are viewing the Market-Building Sales KPIs for <b>Sales Leaders</b> (Telegram is for Sales Staff only; Off Trade is a whole-team KPI). First read what each KPI requires and how it is scored, then use the calculator at the bottom to estimate this month’s points and salary rate.">Bạn đang xem KPI Sale tạo thị trường dành cho <b>Sales Leader</b> (KPI Telegram chỉ dành cho Nhân viên Sales; Off Trade là KPI chung của cả team). Hãy đọc kỹ yêu cầu và cách chấm điểm của từng KPI trước, sau đó dùng máy tính ở cuối trang để ước tính điểm và tỷ lệ lương tháng này.</p>
 
   <div class="block" style="margin-top:28px">
-    <div class="intro"><h3 id="kpiListTitle"></h3><p class="purpose" data-en="<b>Overall purpose of Market-Building Sales KPIs:</b> attract the market, raise brand awareness and build a foundation for Sales. Sales build a personal brand, gain credibility and more chances to close. The company gains brand coverage and new clients."><b>Mục đích chung của KPI Sale tạo thị trường:</b> thu hút thị trường, tăng nhận diện thương hiệu và tạo nền tảng cho Sale khai thác. Sale xây thương hiệu cá nhân, tăng uy tín và cơ hội chốt khách. Công ty tăng độ phủ thương hiệu và thu hút khách mới.</p><p class="muted small" data-en="The line under each KPI’s name is that KPI’s specific purpose. The file only states an overall purpose for the group, so each KPI’s purpose is interpreted from its requirements. Click to see details.">Dòng mô tả dưới tên mỗi KPI là tác dụng riêng của KPI đó. File chỉ nêu mục đích chung cho cả nhóm, nên tác dụng riêng được diễn giải từ yêu cầu của từng KPI. Bấm vào để xem chi tiết.</p></div>
-    <div class="callout" style="margin-bottom:14px" data-en="<b>Branding on every post:</b> use the WG logo and outro (Wegolden / WeMasterTrade). Required hashtags for Off Trade, Content and Cultural posts: <b>#Wegolden #WeMasterTrade #WG</b>."><b>Nhận diện thương hiệu trên mọi bài đăng:</b> dùng logo và outro WG (Wegolden / WeMasterTrade). Hashtag bắt buộc cho bài đăng Off Trade, Content, Cultural: <b>#Wegolden #WeMasterTrade #WG</b>.</div>
+    <div class="intro"><h3 id="kpiListTitle"></h3><p class="muted small" data-en="The line under each KPI’s name is that KPI’s specific purpose. The file only states an overall purpose for the group, so each KPI’s purpose is interpreted from its requirements. Click to see details.">Dòng mô tả dưới tên mỗi KPI là tác dụng riêng của KPI đó. File chỉ nêu mục đích chung cho cả nhóm, nên tác dụng riêng được diễn giải từ yêu cầu của từng KPI. Bấm vào để xem chi tiết.</p></div>
+    <div class="callout" style="margin-bottom:14px" data-en="<b>Where to post:</b> post on the social media channels popular in your country, for example Vietnam: Facebook, Zalo, TikTok · Philippines: Facebook, TikTok · Indonesia: Instagram, TikTok · Uzbekistan: Telegram, Instagram. <b>Branding:</b> WeGolden logo and outro on every video and post. Hashtags: Off Trade and Content <b>#WeGolden #WeGolden(Country)</b> (e.g. #WeGoldenVN) · Cultural <b>#WeGolden</b> · Teambuilding <b>#WeGolden #TeamBuilding</b> · TikTok: not yet required."><b>Kênh đăng bài:</b> đăng lên các kênh mạng xã hội phổ biến tại từng quốc gia, ví dụ Việt Nam: Facebook, Zalo, TikTok · Philippines: Facebook, TikTok · Indonesia: Instagram, TikTok · Uzbekistan: Telegram, Instagram. <b>Nhận diện thương hiệu:</b> logo và outro WeGolden trên mọi video, bài đăng. Hashtag: Off Trade và Content <b>#WeGolden #WeGolden(Country)</b> (ví dụ #WeGoldenVN) · Cultural <b>#WeGolden</b> · Teambuilding <b>#WeGolden #TeamBuilding</b> · TikTok: chưa bắt buộc.</div>
     <div class="kpi-list" id="kpiList"></div>
   </div>
   <div class="block">
     <div class="intro"><h3 data-en="2 · Scoring and salary conversion: where 1,650 comes from">2 · Cách chấm điểm và quy đổi lương: mốc 1.650 từ đâu ra?</h3><p class="muted" data-en="In sheet “2. KPI Sale - Market”, 1,650 points is exactly the sum of the “Full posting” column across 8 KPIs (250 + 7 × 200). The “Extra bonus” points (+50 each) are added on top, which is why any points above 1,650 are converted into a cash bonus. When calculating for each person, only the KPIs of that person’s role are counted.">Theo sheet “2. KPI Sale - Market”, 1.650 điểm chính là tổng cột “Cộng đăng đủ bài” của 8 KPI (250 + 7 × 200). Điểm “Bonus thêm” (+50 mỗi KPI) được cộng ngoài mốc này, nên mọi điểm vượt 1.650 sẽ được quy thành tiền thưởng. Khi tính cho từng người, chỉ cộng các KPI thuộc vai trò của người đó.</p></div>
     <div class="grid2">
       <div class="panel"><h4 id="maxTitle"></h4><div class="scroll"><table class="tiers" id="maxTbl"></table></div></div>
-      <div class="panel"><h4 data-en="Salary payout conversion (Salary Payout table, sheet 2)">Bảng quy đổi % lương (bảng Salary Payout, sheet 2)</h4><table class="tiers" id="payTbl"></table><p class="small muted" style="margin-top:10px" data-en="In the file, each tier is written as a formula: 25% = 1,650 × 0.25; 50% = 1,650 × 0.5; 75% = 1,650 × 0.75.">Trong file, mỗi mốc được ghi bằng công thức: 25% = 1.650 × 0,25; 50% = 1.650 × 0,5; 75% = 1.650 × 0,75.</p></div>
+      <div class="panel"><h4 data-en="Salary payout conversion (Salary Payout table, sheet 2)">Bảng quy đổi % lương (bảng Salary Payout, sheet 2)</h4><table class="tiers" id="payTbl"></table><p class="small muted" style="margin-top:10px" data-en="In the file, each tier is written as a formula: 25% = 1,650 × 0.25; 50% = 1,650 × 0.5; 75% = 1,650 × 0.75. The % reached is multiplied directly by your agreed base salary to give your actual base salary for the month (Step 1 of the salary process).">Trong file, mỗi mốc được ghi bằng công thức: 25% = 1.650 × 0,25; 50% = 1.650 × 0,5; 75% = 1.650 × 0,75. Mức % đạt được nhân trực tiếp với lương cơ bản thỏa thuận để ra lương cơ bản thực tế trong tháng (Bước 1 của quy trình tính lương).</p></div>
     </div>
-    <div class="callout teal" style="margin-top:16px"><b data-en="How the points are calculated">Cách tính điểm</b><ul class="clean small" style="margin-top:6px" data-en="<li><b>Step 1: split by role.</b> Only the KPIs of your role are added up. Leaders do not count Telegram; staff do not count Off Trade.</li><li><b>Step 2: add up points and compare by tier.</b> You must reach a tier to receive that percentage. Example: 1,000 points is between 825 and 1,237.5, so you receive <b>50%</b>.</li><li><b>Points above 1,650:</b> (Actual points − 1,650) = Cash bonus.</li><li><b>Month 1 (probation):</b> the Market-Building KPI is locked at 100% (full agreed base salary).</li>"><li><b>Bước 1: phân theo vai trò.</b> Chỉ cộng các KPI thuộc vai trò của mình. Leader không tính Telegram, nhân viên không tính Off Trade.</li><li><b>Bước 2: cộng điểm và đối chiếu theo bậc.</b> Phải chạm mốc mới được nhận mức % đó. Ví dụ được 1.000 điểm, nằm giữa 825 và 1.237,5, nên nhận <b>50%</b> lương.</li><li><b>Điểm vượt 1.650:</b> (Điểm thực tế − 1.650) = Tiền thưởng.</li><li><b>Tháng 1 (thử việc):</b> KPI tạo thị trường được khóa ở 100% (hưởng đủ 100% lương cơ bản thỏa thuận).</li></ul></div>
+    <div class="callout teal" style="margin-top:16px"><b data-en="How the points are calculated">Cách tính điểm</b><ul class="clean small" style="margin-top:6px" data-en="<li><b>Step 1: split by role.</b> Only the KPIs of your role are added up. Leaders do not count Telegram. Off Trade is a team KPI and counts for both Leaders and staff.</li><li><b>Step 2: add up points and compare by tier.</b> You must reach a tier to receive that percentage. Example: 1,000 points is between 825 and 1,237.5, so you receive <b>50%</b>.</li><li><b>Points above 1,650:</b> (Actual points − 1,650) = Cash bonus.</li><li><b>Month 1 (probation):</b> the Market-Building KPI is locked at 100% (full agreed base salary).</li>"><li><b>Bước 1: phân theo vai trò.</b> Chỉ cộng các KPI thuộc vai trò của mình. Leader không tính Telegram. Off Trade là KPI team, tính cho cả Leader và nhân viên.</li><li><b>Bước 2: cộng điểm và đối chiếu theo bậc.</b> Phải chạm mốc mới được nhận mức % đó. Ví dụ được 1.000 điểm, nằm giữa 825 và 1.237,5, nên nhận <b>50%</b> lương.</li><li><b>Điểm vượt 1.650:</b> (Điểm thực tế − 1.650) = Tiền thưởng.</li><li><b>Tháng 1 (thử việc):</b> KPI tạo thị trường được khóa ở 100% (hưởng đủ 100% lương cơ bản thỏa thuận).</li></ul></div>
   </div>
 
   <div class="block">
@@ -726,19 +807,18 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
   <div class="block">
     <div class="intro"><h3 id="t3Title"></h3><p class="muted" id="t3Sum"></p></div>
     <div class="kpi-list" id="t3List">
+    <div class="t3grp sal"><div><b data-en="Salary part: decides whether your salary is withheld">Phần Lương: quyết định lương có bị giữ hay không</b><span data-en="Core KPIs to hit every month, plus salary protection mechanisms that help you avoid withholding or recover withheld salary.">Gồm KPI cốt lõi phải đạt mỗi tháng và các cơ chế bảo vệ lương, giúp bạn tránh bị giữ lương hoặc lấy lại phần đã bị giữ.</span></div></div>
     <details class="kpi t3item ">
       <summary>
         <div class="knum"></div>
         <div><div class="kpi-title"><span data-en="Standard IB KPI">KPI IB chuẩn</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="≥ 1 newly qualified IB per month">≥ 1 IB mới đạt chuẩn mỗi tháng</div></div>
         <div class="kpi-pts" style="font-size:.85rem"><span class="pill teal" data-en="Core">Cốt lõi</span></div>
       </summary>
-      <div class="kpi-body" style="display:block">
-      <p class="big" style="font-size:2.4rem;margin:6px 0" data-en="≥ 1 new IB<span class=&quot;small muted&quot; style=&quot;font-size:1rem;font-weight:500&quot;> / month</span>">≥ 1 IB mới<span class="small muted" style="font-size:1rem;font-weight:500"> / tháng</span></p>
-      <p class="purpose" data-en="<b>Purpose:</b> ensure Sales effectively develop the IB market. Through it the company evaluates work quality, the ability to expand the IB system below, and each person’s ability to manage and control Sales activity."><b>Mục đích:</b> đảm bảo Sale phát triển hiệu quả thị trường IB. Qua đó công ty đánh giá chất lượng làm việc, khả năng mở rộng hệ thống IB bên dưới và năng lực quản lý, kiểm soát hoạt động Sale của từng cá nhân.</p>
-      <h4 data-en="An IB qualifies when it has">Một IB đạt chuẩn khi có</h4>
-      <ul class="clean" data-en="<li>At least <b>2 fully verified clients</b>, each depositing <b>≥ $300</b> and trading <b>≥ 0.5 lot</b></li><li>Total deposit <b>≥ $2,000</b></li>"><li>Ít nhất <b>2 khách full verify</b>, mỗi khách nạp <b>≥ $300</b> và trade <b>≥ 0,5 lot</b></li><li>Tổng deposit <b>≥ $2.000</b></li></ul>
-      <p class="small muted" style="margin-top:10px" data-en="Counted from the qualification date, not the profile registration date. Clients moved from another system within the company don’t count. Moved clients not yet assigned to anyone do count if they meet the criteria.">Tính theo ngày đạt chuẩn, không theo ngày đăng ký profile. Khách chuyển từ hệ thống khác trong công ty không được tính. Khách chuyển sang nhưng chưa thuộc ai thì được tính nếu đủ điều kiện.</p>
-    </div>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;At least &lt;b&gt;1 newly qualified IB&lt;/b&gt; in the month&lt;/li&gt;&lt;li&gt;Qualified IB: ≥ 2 fully verified clients, each depositing ≥ $300 and trading ≥ 0.5 lot; IB total deposit ≥ $2,000&lt;/li&gt;"><li>Có <b>ít nhất 1 IB mới đạt chuẩn</b> trong tháng</li><li>IB đạt chuẩn: ≥ 2 khách full verify, mỗi khách nạp ≥ $300 và trade ≥ 0,5 lot; tổng deposit của IB ≥ $2.000</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;Counted from the date the IB qualifies, not the profile registration date&lt;/li&gt;&lt;li&gt;Clients moved from another system within the company: not counted as a new IB&lt;/li&gt;&lt;li&gt;Moved clients not yet assigned to anyone: counted if they meet the criteria&lt;/li&gt;&lt;li&gt;A Sandbox IB is not the same as a qualified IB&lt;/li&gt;"><li>Tính theo ngày IB đạt chuẩn, không theo ngày đăng ký profile</li><li>Khách chuyển từ hệ thống khác trong công ty: không tính IB mới</li><li>Khách chuyển sang nhưng chưa thuộc ai: được tính nếu đủ điều kiện</li><li>IB Sandbox khác IB đạt chuẩn</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;&lt;b&gt;Met:&lt;/b&gt; no salary withheld that month&lt;/li&gt;&lt;li&gt;If missed (and the other core KPI is also missed): withholding of 20% → 30% → 50% → commission only&lt;/li&gt;&lt;li&gt;Met twice over: the previous month’s withheld salary is returned&lt;/li&gt;&lt;li&gt;Breakout (Net ≥ $30,000 + 2 new IBs): all salary withheld in the year is returned; the only way to recover Level 5 (no-salary) months&lt;/li&gt;"><li><b>Đạt:</b> không bị giữ lương tháng đó</li><li>Nếu trượt (và không đạt KPI cốt lõi còn lại): giữ lương 20% → 30% → 50% → không lương</li><li>Đạt gấp đôi: hoàn lương bị giữ của tháng liền trước</li><li>Bùng nổ (Net ≥ $30.000 + 2 IB mới): hoàn toàn bộ lương bị giữ trong năm; là cách duy nhất lấy lại các tháng ở mức 5 (không lương)</li></ul></div>
+      </div>
     </details>
     <details class="kpi t3item only-staff">
       <summary>
@@ -746,106 +826,152 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
         <div><div class="kpi-title"><span data-en="Retail Client KPI">KPI khách lẻ</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="Level 1 Net ≥ $3,000 and ≥ 2 new retail clients">Net Level 1 ≥ $3.000 và ≥ 2 khách lẻ mới</div></div>
         <div class="kpi-pts" style="font-size:.85rem"><span class="pill teal" data-en="Core">Cốt lõi</span></div>
       </summary>
-      <div class="kpi-body" style="display:block">
-      <p class="big" style="font-size:2.4rem;margin:6px 0" data-en="Net L1 ≥ $3,000">Net L1 ≥ $3.000</p>
-      <p class="purpose" data-en="<b>Purpose:</b> push Sales to expand the retail client market while staying focused on the IB market."><b>Mục đích:</b> thúc Sale mở rộng thị trường khách lẻ, song song với việc tập trung vào thị trường IB.</p>
-      <h4 data-en="Plus">Và có thêm</h4>
-      <ul class="clean" data-en="<li>At least <b>2 new retail clients</b> in the month</li><li>Each client: fully verified, deposit <b>≥ $300</b>, trade <b>≥ 0.5 lot</b></li>"><li>Ít nhất <b>2 khách lẻ mới</b> trong tháng</li><li>Mỗi khách: full verify, nạp <b>≥ $300</b>, trade <b>≥ 0,5 lot</b></li></ul>
-      <p class="small muted" style="margin-top:10px" data-en="Only Level 1 Net counts: <b>Net = Deposit − Withdraw − Commission</b> (Commission = commission in + amount). Performance counts from when the $300 deposit is completed within the month.">Net chỉ tính Level 1: <b>Net = Deposit − Withdraw − Commission</b> (Commission = commission in + amount). Doanh số tính từ lúc hoàn tất nạp $300 trong tháng.</p>
-    </div>
-    </details>
-    <details class="kpi t3item ">
-      <summary>
-        <div class="knum"></div>
-        <div><div class="kpi-title"><span data-en="Sandbox Program">Chương trình Sandbox</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="New Sales’ net is held until ≥ 2 Sandbox IBs, then reimbursed">Giữ net của Sale mới đến khi đạt ≥ 2 IB Sandbox, rồi hoàn trả</div></div>
-        <div class="kpi-pts" style="font-size:.85rem"><span class="pill bad" data-en="Program">Chương trình</span></div>
-      </summary>
-      <div class="kpi-body" style="display:block">
-        <p class="small" data-en="New Sales’ net is withheld until they reach <b>≥ 2 Sandbox IBs</b> (cumulative, no time limit), then fully reimbursed. Purpose: filter out Sales from competitors and unstable newcomers, and retain staff.">Net của Sale mới bị giữ đến khi đạt <b>≥ 2 IB Sandbox</b> (cộng dồn, không giới hạn thời gian), sau đó được hoàn trả toàn bộ. Mục đích: lọc Sale từ đối thủ, Sale chưa ổn định, và giữ chân nhân sự.</p>
-        <h4 data-en="A Sandbox IB needs">Một IB Sandbox cần</h4>
-        <ul class="clean small" data-en="<li>≥ 2 fully verified clients (all time)</li><li>Each client deposits <b>≥ $250</b> and trades <b>≥ 1 lot</b></li><li>Total deposit <b>≥ $3,000</b></li>"><li>≥ 2 khách full verify (all time)</li><li>Mỗi khách nạp <b>≥ $250</b> và trade <b>≥ 1 lot</b></li><li>Tổng deposit <b>≥ $3.000</b></li></ul>
-        <p class="small muted" style="margin-top:8px" data-en="Note: a Sandbox IB is not the same as a qualified IB.">Lưu ý: IB Sandbox khác IB đạt chuẩn.</p>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;Level 1 Net in the month &lt;b&gt;≥ $3,000&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;≥ 2 new retail clients&lt;/b&gt;, each fully verified, depositing ≥ $300 and trading ≥ 0.5 lot&lt;/li&gt;"><li>Net Level 1 trong tháng <b>≥ $3.000</b></li><li>Có <b>≥ 2 khách lẻ mới</b>, mỗi khách full verify, nạp ≥ $300, trade ≥ 0,5 lot</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;Performance counts from when the client completes the $300 deposit in the month, not the account opening date&lt;/li&gt;&lt;li&gt;Only Level 1 Net counts: Net = Deposit − Withdraw − Com (Com = commission in + amount)&lt;/li&gt;"><li>Doanh số tính từ lúc khách hoàn tất nạp $300 trong tháng, không tính ngày mở tài khoản</li><li>Net chỉ tính Level 1: Net = Deposit − Withdraw − Com (Com = commission in + amount)</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;&lt;b&gt;Meeting the Standard IB KPI or the Retail Client KPI:&lt;/b&gt; no salary withheld that month&lt;/li&gt;&lt;li&gt;Missing both: withholding of 20% → 30% → 50% → commission only&lt;/li&gt;"><li><b>Đạt KPI IB chuẩn hoặc KPI khách lẻ:</b> không bị giữ lương tháng đó</li><li>Trượt cả hai: giữ lương 20% → 30% → 50% → không lương</li></ul></div>
       </div>
-    </details>
-    <details class="kpi t3item ">
-      <summary>
-        <div class="knum"></div>
-        <div><div class="kpi-title"><span data-en="Quarterly KPI Recovery">Phục hồi theo quý</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="≥ 3 qualified IBs in the quarter → quarter’s withheld salary returned">≥ 3 IB đạt chuẩn trong quý → hoàn lương bị giữ của quý</div></div>
-        <div class="kpi-pts" style="font-size:.85rem"><span class="pill good" data-en="Benefit">Quyền lợi</span></div>
-      </summary>
-      <div class="kpi-body" style="display:block"><p class="small" data-en="Accumulate <b>3 qualified IBs</b> over the 3 months of a calendar quarter → in the quarter’s last month, salary withheld in that quarter is reimbursed.">Cộng dồn đủ <b>3 IB đạt chuẩn</b> trong 3 tháng của quý (dương lịch) → tháng cuối quý được hoàn lại lương bị giữ trong quý đó.</p><p class="purpose" data-en="<b>Effect:</b> a month without an IB can be offset by a month with double or triple IBs in the same quarter."><b>Tác dụng:</b> tháng không có IB được bù bằng tháng đạt gấp đôi, gấp ba trong cùng quý.</p></div>
-    </details>
-    <details class="kpi t3item ">
-      <summary>
-        <div class="knum"></div>
-        <div><div class="kpi-title"><span data-en="Annual KPI Recovery">Phục hồi theo năm</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="≥ 12 qualified IBs in the year → all withheld salary returned">≥ 12 IB đạt chuẩn trong năm → hoàn toàn bộ lương bị giữ</div></div>
-        <div class="kpi-pts" style="font-size:.85rem"><span class="pill good" data-en="Benefit">Quyền lợi</span></div>
-      </summary>
-      <div class="kpi-body" style="display:block"><p class="small" data-en="A total of <b>≥ 12 qualified IBs</b> in the year → salary withheld in every missed month of the year is reimbursed.">Cả năm đạt tổng <b>≥ 12 IB đạt chuẩn</b> → hoàn lại lương bị giữ của mọi tháng trượt trong năm.</p><p class="purpose" data-en="<b>Effect:</b> judges Sales on IB network growth over the whole year, without heavy penalties for a few weak months."><b>Tác dụng:</b> đánh giá Sale theo tăng trưởng mạng lưới IB cả năm, không phạt nặng vì vài tháng yếu.</p></div>
     </details>
     <details class="kpi t3item only-leader">
       <summary>
         <div class="knum"></div>
         <div><div class="kpi-title"><span data-en="7th Team Member Program">Thành viên thứ 7</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="7th member actually hits KPI → Leader credited with the IB KPI">Thành viên thứ 7 thực sự đạt KPI → Leader được tính đạt KPI IB</div></div>
-        <div class="kpi-pts" style="font-size:.85rem"><span class="pill good" data-en="Benefit">Quyền lợi</span></div>
+        <div class="kpi-pts" style="font-size:.85rem"><span class="pill good" data-en="Salary protection">Bảo vệ lương</span></div>
       </summary>
-      <div class="kpi-body" style="display:block">
-      <h4 data-en="The Leader is credited only when ALL of these hold">Leader chỉ được tính đạt khi đủ TẤT CẢ điều kiện</h4>
-      <ul class="clean small" data-en="<li>The team has recruited its <b>7th member</b> (counting the Leader).</li><li>That 7th member <b>actually hits a no-withholding KPI</b> in the month: the Standard IB KPI <b>or</b> the Retail Client KPI.</li><li>If the 7th member qualifies late (e.g. misses Jun–Sep, hits in Oct), the Leader is credited in the month it’s achieved.</li>"><li>Team đã tuyển được <b>người thứ 7</b> (tính cả Leader).</li><li>Người thứ 7 đó <b>thực sự đạt KPI không bị giữ lương</b> trong tháng: KPI IB chuẩn <b>hoặc</b> KPI khách lẻ.</li><li>Nếu người thứ 7 đạt muộn (ví dụ trượt T6–T9, đạt T10) thì Leader được tính ở tháng đạt.</li></ul>
-      <div class="callout bad small" style="margin-top:10px" data-en="<b>Not credited:</b> if the 7th member misses their KPI and has salary withheld that month, the Leader is <b>not</b> counted as hitting the IB KPI. Simply having 7 people on the team is not enough."><b>Không được tính:</b> nếu người thứ 7 trượt KPI và bị giữ lương trong tháng, Leader <b>không</b> được tính đạt KPI IB. Chỉ có đủ 7 người trong team là chưa đủ.</div>
-      <p class="purpose" data-en="<b>Effect:</b> reminds Leaders to keep recruiting and not stop expanding once the team feels “big enough”, while giving them another chance to compensate when the IB KPI falls short."><b>Tác dụng:</b> nhắc Leader duy trì tuyển dụng, không dừng mở rộng khi thấy team “đủ”, đồng thời cho Leader thêm cơ hội bù đắp khi KPI IB chưa đạt.</p>
-    </div>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;Recruit the team’s &lt;b&gt;7th member&lt;/b&gt; (counting the Leader)&lt;/li&gt;&lt;li&gt;The 7th member hits a no-withholding KPI (Standard IB or Retail Client)&lt;/li&gt;"><li>Tuyển được <b>người thứ 7</b> của team (tính cả Leader)</li><li>Người thứ 7 đạt KPI không bị giữ lương (KPI IB chuẩn hoặc KPI khách lẻ)</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;The 7th member must &lt;b&gt;actually hit&lt;/b&gt; the KPI that month. Simply having 7 people is not enough&lt;/li&gt;&lt;li&gt;If the 7th member has salary withheld, the Leader is &lt;b&gt;not&lt;/b&gt; credited&lt;/li&gt;&lt;li&gt;If the 7th member qualifies late (e.g. misses Jun–Sep, hits Oct), the Leader is credited in that month&lt;/li&gt;"><li>Người thứ 7 phải <b>thực sự đạt</b> KPI trong tháng. Chỉ đủ 7 người là chưa đủ</li><li>Nếu người thứ 7 bị giữ lương thì Leader <b>không</b> được tính</li><li>Người thứ 7 đạt muộn (ví dụ trượt T6–T9, đạt T10): Leader được tính ở tháng đạt</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;7th member hits: the Leader is counted as &lt;b&gt;meeting the Standard IB KPI&lt;/b&gt; that month, with no withholding&lt;/li&gt;"><li>Người thứ 7 đạt: Leader được tính <b>đạt KPI IB chuẩn</b> tháng đó, không bị giữ lương</li></ul></div>
+      </div>
+    </details>
+    <details class="kpi t3item ">
+      <summary>
+        <div class="knum"></div>
+        <div><div class="kpi-title"><span data-en="Quarterly KPI Recovery">Phục hồi theo quý</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="≥ 3 qualified IBs in the quarter → that quarter’s withheld salary returned">≥ 3 IB đạt chuẩn trong quý → hoàn lương bị giữ của quý</div></div>
+        <div class="kpi-pts" style="font-size:.85rem"><span class="pill good" data-en="Salary protection">Bảo vệ lương</span></div>
+      </summary>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;Accumulate &lt;b&gt;≥ 3 qualified IBs&lt;/b&gt; over the 3 months of a calendar quarter&lt;/li&gt;"><li>Cộng dồn <b>≥ 3 IB đạt chuẩn</b> trong 3 tháng của quý (theo dương lịch)</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;Checked in the last month of the quarter&lt;/li&gt;&lt;li&gt;A month with no IB can be offset by a month with double or triple IBs in the same quarter&lt;/li&gt;"><li>Xét vào tháng cuối của quý</li><li>Tháng không có IB có thể bù bằng tháng đạt gấp đôi, gấp ba trong cùng quý</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;Met: all salary withheld in that quarter is returned&lt;/li&gt;"><li>Đạt: hoàn lại toàn bộ lương bị giữ trong quý đó</li></ul></div>
+      </div>
+    </details>
+    <details class="kpi t3item ">
+      <summary>
+        <div class="knum"></div>
+        <div><div class="kpi-title"><span data-en="Annual KPI Recovery">Phục hồi theo năm</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="≥ 12 qualified IBs in the year → all withheld salary returned">≥ 12 IB đạt chuẩn trong năm → hoàn toàn bộ lương bị giữ</div></div>
+        <div class="kpi-pts" style="font-size:.85rem"><span class="pill good" data-en="Salary protection">Bảo vệ lương</span></div>
+      </summary>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;Reach a total of &lt;b&gt;≥ 12 qualified IBs&lt;/b&gt; in the year&lt;/li&gt;"><li>Cả năm đạt tổng <b>≥ 12 IB đạt chuẩn</b></li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;Judged on IB network growth over the year, not revenue spikes&lt;/li&gt;&lt;li&gt;A few weak months do not remove the chance to recover salary&lt;/li&gt;"><li>Đánh giá theo tăng trưởng mạng lưới IB cả năm, không phải doanh số đột biến</li><li>Vài tháng yếu không làm mất cơ hội lấy lại lương</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;Met: salary withheld in every missed month of the year is returned&lt;/li&gt;"><li>Đạt: hoàn lại lương bị giữ của mọi tháng trượt trong năm</li></ul></div>
+      </div>
     </details>
     <details class="kpi t3item ">
       <summary>
         <div class="knum"></div>
         <div><div class="kpi-title"><span data-en="Standby Program">Chương trình Standby</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="6+ months tenure: automatically saves a missed month at 20% or 30%">Làm từ 6 tháng: tự động cứu tháng trượt bị giữ 20% hoặc 30%</div></div>
-        <div class="kpi-pts" style="font-size:.85rem"><span class="pill good" data-en="Benefit">Quyền lợi</span></div>
+        <div class="kpi-pts" style="font-size:.85rem"><span class="pill good" data-en="Salary protection">Bảo vệ lương</span></div>
       </summary>
-      <div class="kpi-body" style="display:block"><p class="purpose" data-en="<b>Effect:</b> supports Sales with 6+ months who have contributed and stayed committed, by saving a missed month from salary withholding."><b>Tác dụng:</b> hỗ trợ Sale đã làm từ 6 tháng, đã cống hiến và gắn bó, bằng cách cứu tháng trượt KPI để không bị giữ lương.</p><ul class="clean small" data-en="<li>Applied automatically to a missed month; cannot be saved for later</li><li>Only for months with 20% or 30% withholding, <b>not 50%</b></li><li>At most once every 3 months (used in Jan → next from Apr)</li><li>Tenure ≥ 1 year: 4 uses/year · ≥ 6 months: 2 uses in the next 6 months (counted from the next full month)</li>"><li>Tự động “cứu” một tháng trượt KPI, không để dành được</li><li>Chỉ dùng cho tháng bị giữ 20% hoặc 30%, <b>không áp cho 50%</b></li><li>Tối đa 1 lần mỗi 3 tháng (dùng T1 → lần sau từ T4)</li><li>Làm ≥ 1 năm: 4 lần/năm · làm ≥ 6 tháng: 2 lần trong 6 tháng tiếp theo (tính từ tháng tròn kế tiếp)</li></ul></div>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;Nothing extra to do: Standby is &lt;b&gt;applied automatically&lt;/b&gt; to a missed month if you are eligible&lt;/li&gt;&lt;li&gt;Eligibility: 6+ months of tenure&lt;/li&gt;"><li>Không cần làm thêm: Standby <b>tự động áp dụng</b> cho tháng trượt KPI nếu bạn đủ điều kiện</li><li>Điều kiện: làm việc từ 6 tháng trở lên</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;At most once every 3 months (used in Jan → next from Apr)&lt;/li&gt;&lt;li&gt;Only for months withheld at 20% or 30%, &lt;b&gt;not 50%&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Cannot be saved for later&lt;/li&gt;&lt;li&gt;Tenure ≥ 1 year: 4 uses/year · ≥ 6 months: 2 uses in the next 6 months (from the next full month)&lt;/li&gt;"><li>Tối đa 1 lần mỗi 3 tháng (dùng T1 → lần sau từ T4)</li><li>Chỉ áp cho tháng bị giữ 20% hoặc 30%, <b>không áp cho 50%</b></li><li>Không để dành được</li><li>Làm ≥ 1 năm: 4 lần/năm · làm ≥ 6 tháng: 2 lần trong 6 tháng tiếp theo (tính từ tháng tròn kế tiếp)</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;A month saved by Standby: no salary withheld&lt;/li&gt;"><li>Tháng được Standby: không bị giữ lương</li></ul></div>
+      </div>
+    </details>
+    <div class="t3grp net"><div><b data-en="Net part: Net commission, bonuses and extra income">Phần Net: hoa hồng Net, thưởng và thu nhập thêm</b><span data-en="Rules for holding and releasing Net commission, the team bonus, and the live trading KPI.">Quy định giữ và hoàn Net, thưởng toàn team và KPI thực chiến.</span></div></div>
+    <details class="kpi t3item ">
+      <summary>
+        <div class="knum"></div>
+        <div><div class="kpi-title"><span data-en="Sandbox Program">Chương trình Sandbox</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="New Sales’ net is held until ≥ 2 Sandbox IBs, then reimbursed">Giữ net của Sale mới đến khi đạt ≥ 2 IB Sandbox, rồi hoàn trả</div></div>
+        <div class="kpi-pts" style="font-size:.85rem"><span class="pill bad" data-en="Net">Net</span></div>
+      </summary>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;New Sales reach &lt;b&gt;≥ 2 Sandbox IBs&lt;/b&gt; (cumulative, no time limit)&lt;/li&gt;&lt;li&gt;Sandbox IB: ≥ 2 fully verified clients, each depositing ≥ $250 and trading ≥ 1 lot; total deposit ≥ $3,000&lt;/li&gt;"><li>Sale mới đạt <b>≥ 2 IB Sandbox</b> (cộng dồn, không giới hạn thời gian)</li><li>IB Sandbox: ≥ 2 khách full verify, mỗi khách nạp ≥ $250 và trade ≥ 1 lot; tổng deposit ≥ $3.000</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;A Sandbox IB is not the same as a qualified IB&lt;/li&gt;&lt;li&gt;Withheld Net includes Sandbox Net and Pending Net&lt;/li&gt;&lt;li&gt;Net may be held as collateral; Pending Net is reviewed every 2 months&lt;/li&gt;"><li>IB Sandbox khác IB đạt chuẩn</li><li>Net bị giữ gồm Net Sandbox và Net chờ xét</li><li>Net có thể được giữ để thế chân; Net chờ xét được xét 2 tháng/lần</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;Met: all withheld Net is reimbursed&lt;/li&gt;&lt;li&gt;Positive and approved Net: prior months’ Net is reimbursed&lt;/li&gt;"><li>Đạt: hoàn trả toàn bộ Net đã giữ</li><li>Net dương và được duyệt: hoàn lại Net các tháng trước</li></ul></div>
+      </div>
     </details>
     <details class="kpi t3item ">
       <summary>
         <div class="knum"></div>
-        <div><div class="kpi-title"><span data-en="Team-wide Net bonus">Thưởng net toàn team</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="Team net > $50,000 and > 5 people → 10% of the Leader’s net">Net team > $50.000 và team > 5 người → thưởng 10% net của Leader</div></div>
+        <div><div class="kpi-title"><span data-en="Team-wide Net bonus">Thưởng net toàn team</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="Team net &gt; $50,000 and &gt; 5 people → 10% of the Leader’s net">Net team > $50.000 và team > 5 người → thưởng 10% net của Leader</div></div>
         <div class="kpi-pts" style="font-size:.85rem"><span class="pill gold" data-en="Bonus">Thưởng</span></div>
       </summary>
-      <div class="kpi-body" style="display:block">
-      <p class="small" style="margin:0" data-en="Team net above <b>$50,000</b> and more than <b>5 people</b> (including the Leader) → a bonus of <b>10% of the Leader’s actual net commission</b>. The Leader receives it, takes the team out for team building or a meal, then sends the bill to HR for payment.">Net toàn team trên <b>$50.000</b> và team trên <b>5 người</b> (gồm Leader) → thưởng <b>10% net thực nhận của Leader</b>. Leader nhận khoản này, dẫn team đi teambuilding hoặc ăn uống, rồi gửi bill cho HR thanh toán.</p>
-      <p class="purpose" style="margin-bottom:0" data-en="<b>Purpose:</b> use a company fund to recognize the whole team’s effort and strengthen cohesion and collaboration every month."><b>Mục đích:</b> dùng quỹ công ty ghi nhận nỗ lực của cả team, tăng gắn kết và tinh thần phối hợp mỗi tháng.</p>
-    </div>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;Total team net &lt;b&gt;above $50,000&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Team of &lt;b&gt;more than 5 people&lt;/b&gt; (including the Leader)&lt;/li&gt;"><li>Tổng net toàn team <b>trên $50.000</b></li><li>Team <b>trên 5 người</b> (tính cả Leader)</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;The Leader receives the bonus and takes the team out for teambuilding or a meal&lt;/li&gt;&lt;li&gt;Send the bills to HR for payment&lt;/li&gt;"><li>Leader nhận khoản thưởng, dẫn team đi teambuilding hoặc ăn uống</li><li>Gửi hóa đơn cho HR thanh toán</li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;Bonus = &lt;b&gt;10% of the Leader’s actual net commission&lt;/b&gt;&lt;/li&gt;"><li>Thưởng = <b>10% net thực nhận của Leader</b></li></ul></div>
+      </div>
+    </details>
+    <details class="kpi t3item ">
+      <summary>
+        <div class="knum"></div>
+        <div><div class="kpi-title"><span data-en="Live Trading KPI (Livestream)">KPI thực chiến (Livestream)</span> <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub" data-en="Only for Sales who passed the live trading livestream interview">Chỉ áp dụng cho Sale đậu phỏng vấn livestream thực chiến</div></div>
+        <div class="kpi-pts" style="font-size:.85rem"><span class="pill teal2" data-en="Live trading">Thực chiến</span></div>
+      </summary>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span><span data-en="Task">Nhiệm vụ</span></h4><ul class="clean small" data-en="&lt;li&gt;Livestream on &lt;b&gt;YouTube&lt;/b&gt;, Monday – Friday, from about 10:00 to 19:00–20:00&lt;/li&gt;&lt;li&gt;Shifts: &lt;b&gt;2 hours&lt;/b&gt; (short) or &lt;b&gt;2.5 hours&lt;/b&gt; (long)&lt;/li&gt;&lt;li&gt;Traders live &lt;b&gt;more than 25 hours/month&lt;/b&gt;; MCs at least &lt;b&gt;10 shifts/month&lt;/b&gt;&lt;/li&gt;"><li>Livestream trên <b>YouTube</b>, Thứ 2 – Thứ 6, khoảng 10:00 đến 19:00–20:00</li><li>Ca live: ca ngắn <b>2 giờ</b>, ca dài <b>2,5 giờ</b></li><li>Trader live <b>trên 25 giờ/tháng</b>; MC từ <b>10 ca/tháng</b></li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">2</span><span data-en="Things to note">Lưu ý khi làm</span></h4><ul class="clean small" data-en="&lt;li&gt;&lt;b&gt;Only for Sales who passed the live trading interview:&lt;/b&gt; each Sales team nominates 2 people, who do a demo live; the strongest are kept&lt;/li&gt;&lt;li&gt;A trader may not livestream more than &lt;b&gt;10 hours per week&lt;/b&gt;&lt;/li&gt;"><li><b>Chỉ áp dụng cho Sale đã đậu phỏng vấn thực chiến:</b> mỗi team sale đề cử 2 bạn, live thử (demo), ai làm tốt được giữ lại</li><li>Trader không được live quá <b>10 giờ/tuần</b></li></ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span><span data-en="How it is calculated">Cách tính</span></h4><ul class="clean small" data-en="&lt;li&gt;&lt;b&gt;Trader:&lt;/b&gt; 200,000 VND/hour; more than 25 hours/month earns the full fee&lt;/li&gt;&lt;li&gt;&lt;b&gt;MC (female Sales):&lt;/b&gt; 120,000 VND/hour, plus salary&lt;/li&gt;&lt;li&gt;Traders under 25 hours/month or MCs under 10 shifts/month: still subject to KPIs&lt;/li&gt;"><li><b>Trader:</b> 200.000đ/giờ; live trên 25 giờ/tháng thì được trả đủ tiền công</li><li><b>MC (sale nữ):</b> 120.000đ/giờ, cộng lương</li><li>Trader dưới 25 giờ/tháng hoặc MC dưới 10 ca/tháng: vẫn phải áp KPI</li></ul></div>
+      </div>
     </details>
     </div>
   </div>
 
   <div class="block">
-    <div class="intro"><h3 data-en="2 · Salary withholding and how to get it back">2 · Giữ lương khi trượt KPI và cách được hoàn lại</h3></div>
+    <div class="intro"><h3 data-en="2 · Rules for getting back salary held (HOLD) under KPIs">2 · Quy định hoàn lại phần lương bị giữ (HOLD) do KPI</h3></div>
   </div>
   <div class="block" style="margin-top:12px">
-    <div class="intro"><h4 data-en="Withholding path when the core KPI is missed">Lộ trình giữ lương khi trượt KPI cốt lõi</h4><p class="muted" data-en="The first month (probation) has no KPI. From month 2, each consecutive missed month withholds a larger share. A single month on target resets the tier back to 20%.">Tháng đầu (thử việc) không áp KPI. Từ tháng thứ 2, mỗi tháng trượt liên tiếp thì phần lương bị giữ tăng lên. Chỉ cần một tháng đạt là bậc giữ lương quay về 20%.</p><p class="purpose" data-en="<b>Purpose of the reimbursement rules:</b> motivate Sales, boost revenue, and return everything previously withheld once Sales perform well again."><b>Mục đích cơ chế hoàn trả:</b> kích Sale, kích doanh số, và trả lại toàn bộ các khoản đã từng bị giữ khi Sale làm tốt trở lại.</p></div>
+    <div class="intro"><h4 data-en="5 hold levels when the core KPI is not met">5 mức giữ lương (HOLD) khi chưa đạt KPI cốt lõi</h4><p class="muted" data-en="The first month (probation) has no KPI. From month 2, each consecutive month without the KPI moves you up one level and a larger share is held. A single month on target resets the level back to 20%.">Tháng đầu (thử việc) không áp KPI. Từ tháng thứ 2, mỗi tháng liên tiếp chưa đạt KPI thì lên một mức và phần lương bị giữ tăng lên. Chỉ cần một tháng đạt là quay về mức 20%.</p><p class="purpose" data-en="<b>Purpose of the reimbursement rules:</b> motivate Sales, boost revenue, and return everything previously withheld once Sales perform well again."><b>Mục đích cơ chế hoàn trả:</b> kích Sale, kích doanh số, và trả lại toàn bộ các khoản đã từng bị giữ khi Sale làm tốt trở lại.</p></div>
     <div class="panel">
       <div class="ladder">
-        <div><div class="rung" style="background:var(--good);height:50px">0%<small data-en="Probation">Thử việc</small></div><div class="rung-cap" data-en="Month 1">Tháng 1</div></div>
-        <div><div class="rung" style="background:#C9A227;height:72px">20%<small data-en="withheld">giữ lại</small></div><div class="rung-cap" data-en="1st miss">Trượt lần 1</div></div>
-        <div><div class="rung" style="background:#D9822B;height:96px">30%<small data-en="withheld">giữ lại</small></div><div class="rung-cap" data-en="2nd miss">Trượt lần 2</div></div>
-        <div><div class="rung" style="background:#CF5A34;height:122px">50%<small data-en="withheld">giữ lại</small></div><div class="rung-cap" data-en="3rd miss">Trượt lần 3</div></div>
-        <div><div class="rung" style="background:var(--bad);height:150px"><span data-en="No salary">Không lương</span><small data-en="commission only">chỉ hoa hồng</small></div><div class="rung-cap" data-en="Further misses">Tiếp tục trượt</div></div>
+        <div><div class="rung" style="background:var(--good);height:50px">0%<small data-en="Probation">Thử việc</small></div><div class="rung-cap" data-en="<b>Level 1</b> · Month 1"><b>Mức 1</b> · Tháng 1</div></div>
+        <div><div class="rung" style="background:#C9A227;height:72px">20%<small data-en="held">bị giữ</small></div><div class="rung-cap" data-en="<b>Level 2</b> · 1st miss"><b>Mức 2</b> · Trượt lần 1</div></div>
+        <div><div class="rung" style="background:#D9822B;height:96px">30%<small data-en="held">bị giữ</small></div><div class="rung-cap" data-en="<b>Level 3</b> · 2nd miss"><b>Mức 3</b> · Trượt lần 2</div></div>
+        <div><div class="rung" style="background:#CF5A34;height:122px">50%<small data-en="held">bị giữ</small></div><div class="rung-cap" data-en="<b>Level 4</b> · 3rd miss"><b>Mức 4</b> · Trượt lần 3</div></div>
+        <div><div class="rung" style="background:var(--bad);height:150px"><span data-en="No salary">Không lương</span><small data-en="commission only">chỉ hoa hồng</small></div><div class="rung-cap" data-en="<b>Level 5</b> · Further misses"><b>Mức 5</b> · Tiếp tục trượt</div></div>
       </div>
+      <div class="callout" style="margin-top:14px" data-en="<b>Level 5 rule:</b> once you reach Level 5 (no salary, commission only), the amounts held at this level can <b>only be returned through a Sales breakout</b>. Meeting the KPI, 2x KPI or the Quarterly/Annual KPI does not return Level 5 months."><b>Quy định mức 5:</b> khi đã rơi vào mức 5 (không lương, chỉ nhận hoa hồng), phần bị giữ ở mức này <b>chỉ được hoàn lại khi Bùng nổ doanh số</b>. Đạt KPI, đạt gấp đôi hay KPI Quý/Năm không hoàn lại các tháng ở mức 5.</div>
     </div>
     <div class="grid3" style="margin-top:16px">
       <div class="panel"><span class="pill good" data-en="KPI met">Đạt KPI</span><p class="small" style="margin-top:8px" data-en="No salary withheld that month. The tier resets to 20% for the next miss.">Không bị giữ lương tháng đó. Bậc giữ lương reset về 20% cho lần trượt kế tiếp.</p></div>
-      <div class="panel"><span class="pill good" data-en="KPI met 2x">Đạt gấp đôi KPI</span><p class="small" style="margin-top:8px" data-en="The salary withheld in the <b>previous month</b> is reimbursed.">Được hoàn lại phần lương bị giữ của <b>tháng liền trước</b>.</p></div>
-      <div class="panel"><span class="pill gold" data-en="Sales breakout">Bùng nổ doanh số</span><p class="small" style="margin-top:8px" data-en="Net <b>≥ $30,000</b>/month and <b>2 new IBs</b> → <b>all</b> salary withheld in the year is reimbursed, including commission-only periods.">Net <b>≥ $30.000</b>/tháng và <b>2 IB mới</b> → hoàn lại <b>toàn bộ</b> lương đã bị giữ trong năm, kể cả thời gian không lương.</p></div>
+      <div class="panel"><span class="pill good" data-en="KPI met 2x">Đạt gấp đôi KPI</span><p class="small" style="margin-top:8px" data-en="The salary held in the <b>previous month</b> is returned (Levels 2–4 only).">Được hoàn lại phần lương bị giữ của <b>tháng liền trước</b> (chỉ áp dụng mức 2–4).</p></div>
+      <div class="panel"><span class="pill gold" data-en="Sales breakout">Bùng nổ doanh số</span><p class="small" style="margin-top:8px" data-en="Net <b>≥ $30,000</b>/month and <b>2 new IBs</b> → <b>all</b> salary held in the year is returned. This is the <b>only way</b> to get back Level 5 (no-salary) months.">Net <b>≥ $30.000</b>/tháng và <b>2 IB mới</b> → hoàn lại <b>toàn bộ</b> lương bị giữ trong năm. Đây là <b>cách duy nhất</b> lấy lại các tháng ở mức 5 (không lương).</p></div>
     </div>
   </div>
 
   <div class="block" style="margin-top:16px">
-    <div class="panel">
-        <span class="pill" data-en="Net withholding rules">Quy định giữ net</span>
-        <h3 style="margin-top:6px" data-en="What withheld Net includes">Net bị giữ gồm những gì</h3>
-        <ul class="clean small" data-en="<li><b>Sandbox Net</b> and <b>Pending Net</b></li><li>Net may be retained as collateral to reduce risk</li><li>Pending Net is aggregated and reviewed <b>every 2 months</b></li><li>Once Net is positive and approved → prior months’ Net is reimbursed</li>"><li><b>Net Sandbox</b> và <b>Net chờ xét</b></li><li>Net có thể được giữ lại để thế chân, giảm rủi ro</li><li>Net chờ xét được tổng hợp và xét <b>2 tháng/lần</b></li><li>Khi Net dương và được duyệt → hoàn lại Net các tháng trước</li></ul>
-        <div class="callout" style="margin-top:14px" data-en="<b>Formula:</b> NET = Deposit − Withdraw − Com."><b>Công thức:</b> NET = Deposit − Withdraw − Com.</div>
+    <div class="intro"><h4 data-en="Net payout: 2 types">Quy định trả Net: 2 loại</h4><p class="muted" data-en="Net commission is paid in one of two ways depending on whether you are in the Sandbox program. Formula: NET = Deposit − Withdraw − Com; Level 1 NET = retail client NET.">Hoa hồng Net được trả theo một trong hai cách, tùy bạn có thuộc chương trình Sandbox hay không. Công thức: NET = Deposit − Withdraw − Com; NET Level 1 = NET khách lẻ.</p></div>
+    <div class="grid2">
+      <div class="panel">
+        <span class="pill good" data-en="Type 1">Loại 1</span>
+        <h3 style="margin-top:6px" data-en="Regular Net payout">Trả Net thông thường</h3>
+        <ul class="clean small" data-en="<li>Pending Net is aggregated and reviewed <b>every 2 months</b></li><li>Net may be retained as collateral to reduce risk</li><li>Once Net is positive and approved → the held months’ Net is paid out</li>"><li>Net chờ xét được tổng hợp và xét <b>2 tháng/lần</b></li><li>Net có thể được giữ lại để thế chân, giảm rủi ro</li><li>Khi Net dương và được duyệt → trả Net của các tháng đã giữ</li></ul>
       </div>
+      <div class="panel">
+        <span class="pill gold" data-en="Type 2">Loại 2</span>
+        <h3 style="margin-top:6px" data-en="Sandbox Net payout">Trả Net Sandbox</h3>
+        <ul class="clean small" data-en="<li>Applies to <b>new Sales</b> in the Sandbox program</li><li>Net is held until you reach <b>≥ 2 Sandbox IBs</b> (cumulative, no time limit)</li><li>Once reached → all held Sandbox Net is paid out</li>"><li>Áp dụng cho <b>Sale mới</b> thuộc chương trình Sandbox</li><li>Net được giữ đến khi đạt <b>≥ 2 IB Sandbox</b> (cộng dồn, không giới hạn thời gian)</li><li>Khi đạt → trả toàn bộ Net Sandbox đã giữ</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" style="margin-top:16px">
+    <div class="intro"><h4 data-en="Net commission calculator">Máy tính hoa hồng Net</h4></div>
+    <div class="grid2">
+      <div class="panel">
+        <div class="field"><label for="netA" data-en="Your assumed Net (A, $)">Số Net bạn giả định (A, $)</label><input id="netA" type="number" min="0" step="100" value="10000" inputmode="decimal"></div>
+        <div class="field"><label for="netRate" data-en="Commission rate (%)">Tỷ lệ hoa hồng (%)</label><input id="netRate" type="number" min="0" step="0.1" value="2.5" inputmode="decimal"></div>
+      </div>
+      <div class="panel" aria-live="polite">
+        <div class="mlab" data-en="Amount received">Số tiền thực nhận</div>
+        <div class="held" id="netOut" style="font-size:1.8rem;margin:6px 0 4px">$250</div>
+        <div class="small muted" id="netFormula"></div>
+        <p class="small muted" style="margin-top:12px" data-en="<b>Note:</b> these are assumed figures for illustration only; you can change them. The actual amount depends on the approved Net, the payout type (regular or Sandbox) and the rate confirmed by Support."><b>Lưu ý:</b> đây là số giả định để minh họa, bạn có thể tùy chỉnh. Số thực nhận phụ thuộc vào Net được duyệt, loại trả Net (thông thường hay Sandbox) và tỷ lệ do Support xác nhận.</p>
+      </div>
+    </div>
   </div>
 
   <div class="block">
@@ -891,7 +1017,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
         <div><span class="small muted" data-en="Reimbursed">Đã được hoàn lại</span><strong id="sumBack">0%</strong><span class="small muted" data-en="of a month’s salary">tháng lương</span></div>
         <div><span class="small muted" data-en="Qualified IBs this year">IB đạt chuẩn cả năm</span><strong id="sumIB">0</strong><span class="small muted" id="sumIBnote"></span></div>
       </div>
-      <p class="small muted" style="margin-top:12px" data-en="A simplified simulation for illustration: “Met” = 1 IB, “2x” = 2 IBs, “Breakout” = 2 IBs + Net ≥ $30K. A month saved by Standby has no withholding and does not raise the withholding tier. Specific cases are confirmed by Support.">Bản mô phỏng đơn giản hóa để minh họa: “Đạt” = 1 IB, “Gấp đôi” = 2 IB, “Bùng nổ” = 2 IB + Net ≥ $30K. Tháng được Standby cứu không bị giữ lương và không làm tăng bậc giữ lương. Trường hợp cụ thể do Support xác nhận.</p>
+      <p class="small muted" style="margin-top:12px" data-en="A simplified simulation for illustration: “Met” = 1 IB, “2x” = 2 IBs, “Breakout” = 2 IBs + Net ≥ $30K. A month saved by Standby has no withholding and does not raise the hold level. Level 5 (no-salary) months are only returned by a Sales breakout. Specific cases are confirmed by Support.">Bản mô phỏng đơn giản hóa để minh họa: “Đạt” = 1 IB, “Gấp đôi” = 2 IB, “Bùng nổ” = 2 IB + Net ≥ $30K. Tháng được Standby cứu không bị giữ lương và không làm tăng mức giữ lương. Tháng ở mức 5 (không lương) chỉ được hoàn khi Bùng nổ doanh số. Trường hợp cụ thể do Support xác nhận.</p>
     </div>
   </div>
 
@@ -899,7 +1025,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
     <div class="intro"><h3 data-en="4 · Final step: estimate your take-home salary">4 · Bước cuối: tính thử lương thực nhận của bạn</h3><p class="purpose" data-en="You have learned both KPI systems. Now plug in your own numbers: base salary, Market-Building KPI result, working days and Net KPI result, and see the salary you can earn when you hit your KPIs. Use it as your monthly target.">Bạn đã học xong cả hai hệ KPI. Giờ hãy nhập số của chính bạn: lương cơ bản, kết quả KPI tạo thị trường, ngày công và kết quả KPI Net, để thấy mức lương bạn nhận được khi đạt KPI. Hãy coi đó là mục tiêu của tháng.</p></div>
   </div>
   <div class="block" style="margin-top:12px">
-    <div class="intro"><h4 data-en="How your monthly salary is calculated">Cách tính lương thực nhận hằng tháng</h4><p class="muted" data-en="Salary is calculated in 4 steps, in this order. Enter your numbers to see each step. Defaults show the approved example.">Lương được tính qua 4 bước, theo đúng thứ tự. Nhập số liệu để xem từng bước. Số mặc định là ví dụ đã được duyệt.</p></div>
+    <div class="intro"><h4 data-en="How your monthly salary is calculated">Cách tính lương thực nhận hằng tháng</h4><p class="muted" data-en="Salary follows the official 3-step process, in this order. Enter your numbers to see each step. Defaults show the approved example. Net Commission is added on top when approved and is not included here.">Lương được tính theo quy trình 3 bước chính thức, đúng thứ tự. Nhập số liệu để xem từng bước. Số mặc định là ví dụ đã được duyệt. Hoa hồng Net được cộng thêm khi được duyệt và không nằm trong máy tính này.</p></div>
     <div class="calc">
       <div class="panel">
         <label class="prob"><input type="checkbox" class="probChk"> <span data-en="<b>Month 1 – Probation:</b> Market-Building KPI locked at 100%, no Net withholding"><b>Tháng 1 – thử việc (Probation):</b> khóa KPI tạo thị trường 100%, không giữ lương Net</span></label>
@@ -922,7 +1048,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
         <p class="small bad-t" id="scWarn" style="margin:0"></p>
       </div>
       <div class="panel result" aria-live="polite">
-        <div class="small muted" data-en="Final salary (before other payroll adjustments)">Lương thực nhận (trước các điều chỉnh payroll khác)</div>
+        <div class="small muted" data-en="Salary paid (excluding Net Commission and other payroll adjustments)">Lương thực trả (chưa gồm Hoa hồng Net và điều chỉnh payroll khác)</div>
         <div class="big" id="scFinal" style="font-size:2.4rem">0</div>
         <div class="track" id="scBar" style="margin:14px 0 6px;height:22px"></div>
         <div class="exkey" id="scKey"></div>
@@ -936,7 +1062,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
 <!-- ================= 4. CHƯƠNG TRÌNH ĐẶC BIỆT ================= -->
 <section class="view" id="v-chuong-trinh">
   <h2 data-en="Sales Special Programs">Chương trình đặc biệt cho Sales</h2>
-  <p class="lead" data-en="Beyond KPIs, there are two monthly programs. The knowledge quiz is mandatory: a refresher with big prizes. The lucky draw is a pure bonus, with a 50 million VND pool every month.">Ngoài KPI, mỗi tháng có hai chương trình. Quiz kiến thức là bắt buộc, vừa ôn kiến thức vừa có thưởng lớn. Quay số may mắn là phần thưởng thêm hoàn toàn, quỹ 50 triệu mỗi tháng.</p>
+  <p class="lead" data-en="Beyond KPIs, there are two monthly programs: the mandatory knowledge quiz with big prizes, and the lucky draw with a 50 million VND pool. ">Ngoài KPI, mỗi tháng có hai chương trình: Quiz kiến thức (bắt buộc, thưởng lớn) và Quay số may mắn (quỹ 50 triệu).</p>
   <div class="grid2" style="margin-top:24px">
     <div class="panel">
       <span class="pill bad" data-en="Mandatory · monthly · Zoom + Quizizz">Bắt buộc · hằng tháng · Zoom + Quizizz</span>
@@ -983,6 +1109,9 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
       <div class="tickets" id="tickets" aria-hidden="true"></div>
       <div class="callout bad" style="margin-top:14px" data-en="<b>You must be on Zoom</b> during the draw. If absent, you lose the right to the prize."><b>Phải có mặt trên Zoom</b> lúc quay. Vắng mặt là mất quyền nhận giải.</div>
     </div>
+  </div>
+  <div class="block">
+    <div class="callout teal" data-en="<b>Live trading livestream</b> is now <b>KPI no. 8</b> in the Salary &amp; Net Commission KPIs tab, and only applies to Sales who passed the live trading interview. <a href=&quot;#luong-net&quot;>See KPI no. 8</a>"><b>Livestream thực chiến</b> nay là <b>KPI số 8</b> trong tab KPI Lương &amp; Hoa hồng Net, chỉ áp dụng cho Sale đậu phỏng vấn thực chiến. <a href="#luong-net">Xem KPI số 8</a></div>
   </div>
 </section>
 
@@ -1057,75 +1186,33 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
 
   /* Market-Building KPI data (who: leader | staff | all) */
   const KPIS=[
-    {id:'offtrade',who:'leader',full:250,bonus:50,mod:'Audit',
-     vi:{name:'KPI Off Trade',purpose:'KPI của cả team: video phân tích tin tức, kỹ thuật, lộ mặt để tạo sự thân thiện và niềm tin với người xem.',platform:'TikTok + Facebook',
-       note:'<b>KPI Off Trade là KPI cho team, không phải KPI Leader phải tự làm.</b> Leader được tự phân công thành viên trong team thực hiện, miễn sao đạt yêu cầu. <b>Leader chịu trách nhiệm up link bài đăng vào app tính điểm.</b><br><b>Facebook:</b> do Công ty tạo và giao cho CM sử dụng. Sau này CM có nhiệm vụ nhân bản Facebook cho từng Sales Leader.',freq:'5 video/tuần · tối đa 2 video/ngày',
-       req:['Video 1 phút – 1 phút 30 (dài hơn cũng được)','Nội dung: phân tích tin tức, phân tích kỹ thuật, nhận định tài chính','Bắt buộc lộ mặt, kể cả livestream','Logo WG (Wegolden / WeMasterTrade) suốt video + outro WG','Hashtag bắt buộc: #Wegolden #WeMasterTrade #WG','Không chứa logo/giao diện Facebook, Instagram, YouTube'],
-       score:['5 bài/tuần: 50 điểm','25 bài/tháng: 250 + 50 điểm thưởng','Tuần không đăng: 0 điểm','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Off Trade KPI',purpose:'A team KPI: news and technical analysis videos, face on camera to build friendliness and trust with viewers.',platform:'TikTok + Facebook',
-       note:'<b>Off Trade is a team KPI, not one the Leader must do personally.</b> The Leader may assign team members to do it, as long as the requirements are met. <b>The Leader is responsible for uploading the post links to the scoring app.</b><br><b>Facebook:</b> created by the Company and handed to the CM. Later, the CM is responsible for cloning a Facebook account for each Sales Leader.',freq:'5 videos/week · max 2 videos/day',
-       req:['Videos of 1 – 1.5 minutes (longer is fine)','Content: news analysis, technical analysis, financial views','Face on camera is mandatory, including livestreams','WG logo (Wegolden / WeMasterTrade) throughout + WG outro','Required hashtags: #Wegolden #WeMasterTrade #WG','No Facebook, Instagram or YouTube logos/interface'],
-       score:['5 posts/week: 50 points','25 posts/month: 250 + 50 bonus points','Week with no posts: 0 points','4 consecutive weeks with no posts: −200']}},
+    {id:'offtrade',who:'all',full:250,bonus:50,mod:'Audit',
+     vi:{"name": "KPI Off Trade", "purpose": "KPI chung của cả team: chia nhau làm video phân tích tin tức, kỹ thuật, lộ mặt để tạo sự thân thiện và niềm tin với người xem.", "platform": "Kênh video ngắn của công ty theo từng quốc gia", "freq": "5 video/tuần · tối đa 2 video/ngày", "task": ["Team đăng đủ <b>5 video/tuần</b> (tối đa 2 video/ngày) trên kênh video ngắn của công ty tại quốc gia (ví dụ TikTok, Facebook Reels)", "Mỗi video 1 phút – 1 phút 30, nội dung phân tích tin tức, kỹ thuật, nhận định tài chính", "Sales Leader điền link video vào app"], "note": ["<b>KPI TEAM:</b> team tự phân công người làm; không đạt thì <b>cả team không đạt</b>", "Bắt buộc lộ mặt; logo WeGolden suốt video và outro WeGolden ở cuối", "Hashtag #WeGolden #WeGolden(Country); không chứa logo hay giao diện của nền tảng khác"], "score": ["5 bài/tuần: 50 điểm (thiếu bài: 0 điểm tuần đó)", "25 bài/tháng: 250 + 50 điểm thưởng", "Không đăng 4 tuần liên tiếp: −200"]},
+     en:{"name": "Off Trade KPI", "purpose": "A whole-team KPI: members share the work of making news and technical analysis videos, face on camera to build friendliness and trust with viewers.", "platform": "Company short-video channels by country", "freq": "5 videos/week · max 2 videos/day", "task": ["The team posts <b>5 videos/week</b> (max 2/day) on the company’s short-video channels in the country (e.g. TikTok, Facebook Reels)", "Each video 1 – 1.5 minutes: news analysis, technical analysis, financial views", "The Sales Leader enters the video links in the app"], "note": ["<b>TEAM KPI:</b> the team assigns who makes the videos; if it is not met, <b>the whole team fails</b>", "Face on camera; WeGolden logo throughout and WeGolden outro at the end", "Hashtags #WeGolden #WeGolden(Country); no logos or interface from other platforms"], "score": ["5 posts/week: 50 points (fewer: 0 points that week)", "25 posts/month: 250 + 50 bonus points", "No posts for 4 consecutive weeks: −200"]}},
     {id:'telegram',who:'staff',full:200,bonus:0,mod:'Audit',team:true,
-     vi:{name:'KPI Telegram',purpose:'Giữ các nhóm Telegram luôn sôi động bằng tương tác thật, đều đặn mỗi ngày.',platform:'Telegram',freq:'25 tin nhắn hợp lệ/ngày · Thứ 2 – Thứ 6',
-       warn:'<b>Tài khoản Telegram Premium:</b> tin nhắn KHÔNG được chứa emoji Premium, sticker động, ký tự đặc biệt (font chữ kiểu), logo, và không được kèm hình ảnh. Vi phạm thì <b>BOT không tính tin nhắn đó vào KPI</b> (0 điểm).',
-       req:['<b>Tin hợp lệ phải đạt TẤT CẢ điều kiện:</b> chỉ có văn bản, chữ thường, 3–15 câu, không lặp nội dung','<b>Chống gian lận:</b> không gửi tin trùng lặp. Tin giống hệt hoặc chỉ đổi vài ký tự, vài từ bị coi là gian lận và bị xử phạt nghiêm khắc','Không gửi tin quá ngắn hoặc quá dài','<b>Không gửi hình ảnh</b>, kể cả văn bản kèm hình ảnh'],
-       score:['Cả team đạt 4 tuần liên tiếp: +200 cho toàn team','Cả team không đạt 4 tuần liên tiếp: −200 cho toàn team']},
-     en:{name:'Telegram KPI',purpose:'Keep Telegram groups lively with genuine, consistent interaction every day.',platform:'Telegram',freq:'25 valid messages/day · Mon – Fri',
-       warn:'<b>Telegram Premium accounts:</b> messages must NOT contain Premium emoji, animated stickers, special characters (fancy fonts) or logos, and must not include images. Violations mean <b>the BOT will not count that message toward the KPI</b> (0 points).',
-       req:['<b>A valid message must meet ALL conditions:</b> text only, 3–15 sentences, no repeated content','<b>Anti-fraud:</b> no duplicate messages. Identical messages, or ones changed by only a few characters or words, are classified as fraud and subject to severe disciplinary action','Messages must not be excessively short or long','<b>No images</b>, including text captions attached to images'],
-       score:['Whole team meets it 4 weeks in a row: +200 for the team','Whole team misses it 4 weeks in a row: −200 for the team']}},
+     vi:{"name": "KPI Telegram", "purpose": "Giữ các nhóm Telegram luôn sôi động bằng tương tác thật, đều đặn mỗi ngày.", "platform": "Telegram", "freq": "25 tin nhắn hợp lệ/ngày · Thứ 2 – Thứ 6", "task": ["Gửi <b>25 tin nhắn hợp lệ mỗi ngày</b>, Thứ 2 – Thứ 6, trong nhóm Telegram", "Tin hợp lệ: chỉ văn bản, 3–15 câu", "Mỗi tin có nội dung riêng, không lặp lại"], "note": ["<b>Tài khoản Premium:</b> không dùng emoji Premium, sticker động, ký tự đặc biệt, logo; vi phạm thì BOT không tính", "Tin trùng lặp hoặc chỉ đổi vài chữ bị coi là gian lận và xử phạt nghiêm khắc", "Không gửi hình ảnh, kể cả văn bản kèm hình; không gửi tin quá ngắn hoặc quá dài"], "score": ["Chấm theo cả team, BOT tự đếm tin hợp lệ", "Cả team đạt 4 tuần liên tiếp: +200 cho toàn team", "Cả team không đạt 4 tuần liên tiếp: −200 cho toàn team"]},
+     en:{"name": "Telegram KPI", "purpose": "Keep Telegram groups lively with genuine, consistent interaction every day.", "platform": "Telegram", "freq": "25 valid messages/day · Mon – Fri", "task": ["Send <b>25 valid messages per day</b>, Monday to Friday, in the Telegram groups", "A valid message is plain text, 3–15 sentences", "Each message has its own content, with no repetition"], "note": ["<b>Premium accounts:</b> no Premium emoji, animated stickers, special characters or logos; otherwise the BOT will not count it", "Duplicates or lightly reworded copies are treated as fraud and severely penalized", "No images, including captions on images; no messages that are too short or too long"], "score": ["Scored per team; the BOT counts valid messages automatically", "Whole team meets it 4 weeks in a row: +200 for the team", "Whole team misses it 4 weeks in a row: −200 for the team"]}},
     {id:'slogan',who:'all',full:200,bonus:50,mod:'Audit',
-     vi:{name:'KPI Slogan',purpose:'Thấm văn hóa và tinh thần WeGolden qua khẩu hiệu, tạo kỷ luật đều đặn mỗi tuần.',platform:'Telegram (app)',freq:'Thứ 2 và Thứ 4, trước 12:00',
-       req:['Quay video đọc khẩu hiệu chính thức của WG, gửi lên ứng dụng','Hô rõ ngày/tháng/năm trong video','Áp dụng cho SC và toàn bộ CTV','<b>Nếu app lỗi:</b> phải có video quay lại màn hình App báo lỗi. Có video này team Audit mới ghi chú check thủ công và tính điểm'],
-       score:['2 bài/tuần: 50 điểm','8 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Slogan KPI',purpose:'Instill WeGolden’s culture and spirit through the slogan, building weekly discipline.',platform:'Telegram (app)',freq:'Monday and Wednesday, before 12:00',
-       req:['Record a video reciting the official WG slogan and upload it to the app','State the date clearly in the video','Applies to SCs and all collaborators','<b>If the app fails:</b> you must have a video recording of the app showing the error. Only with this video will the Audit team note a manual check and award the points'],
-       score:['2 posts/week: 50 points','8 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
-    {id:'airdrop',who:'all',full:200,bonus:50,mod:'HR',
-     vi:{name:'KPI Airdrop',purpose:'Tăng lượt xem và độ phủ cho các buổi livestream bằng cách chia sẻ đúng ngày diễn ra.',platform:'Zalo + Facebook',freq:'1 livestream/tuần · Thứ 2 – Thứ 6',
-       req:['Bắt buộc chia sẻ 1 bài livestream trong tuần (Thứ 2 – Thứ 6)','Chia sẻ đúng ngày livestream diễn ra, không chia sẻ ngày khác','<b>Chia sẻ vào Thứ 7, Chủ nhật sẽ không được tính điểm</b>'],
-       score:['Mỗi bài: 50 điểm','4 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Airdrop KPI',purpose:'Increase views and reach of livestreams by sharing on the day they happen.',platform:'Zalo + Facebook',freq:'1 livestream/week · Mon – Fri',
-       req:['Sharing 1 livestream post during the week (Mon – Fri) is mandatory','Share on the livestream day itself, not on other days','<b>Shares on Saturday or Sunday are not scored</b>'],
-       score:['Each post: 50 points','4 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
-    {id:'cultural',who:'all',full:200,bonus:50,mod:'HR',
-     vi:{name:'KPI Cultural',purpose:'Lan tỏa nội dung chính thức về WeGolden qua mạng lưới bạn bè cá nhân của Sale.',platform:'Zalo + Facebook',freq:'1 bài/tuần · chốt 16:00 Thứ 2',
-       req:['Đăng 1 bài “3 sao” từ nhóm văn hóa chính thức của WG (Official Group) trên Telegram/Zalo. Link nhóm mới đang được cập nhật; không dùng link cũ t.me/yeulitefinance','Nội dung và link phải khớp, có hashtag #Wegolden #WeMasterTrade #WG + logo WG','Facebook ≥ 1.000 bạn bè hoặc người theo dõi, bài để Công khai','Dùng Zalo chăm sóc khách; kết bạn Zalo HR','KPI Văn hóa cơ bản: đăng nội dung, ảnh cá nhân về WeGolden (cả khối Hành chính)'],
-       score:['Mỗi bài: 50 điểm','4 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Cultural KPI',purpose:'Spread official WeGolden content through Sales’ personal networks.',platform:'Zalo + Facebook',freq:'1 post/week · cutoff 16:00 Monday',
-       req:['Post one “3-star” post from WG’s official culture group (Official Group) on Telegram/Zalo. The new group link is being updated; do not use the old link t.me/yeulitefinance','Content and link must match, with hashtags #Wegolden #WeMasterTrade #WG + WG logo','Facebook ≥ 1,000 friends or followers, post set to Public','Use Zalo for client care; add HR on Zalo','Basic Culture KPI: post personal content and photos about WeGolden (admin staff too)'],
-       score:['Each post: 50 points','4 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
-    {id:'content',who:'all',full:200,bonus:50,mod:'Audit',
-     vi:{name:'KPI Content',purpose:'Xây thương hiệu cá nhân bằng nội dung tự làm, thu hút người xem mới và khách tiềm năng.',platform:'TikTok + Zalo + Facebook',freq:'Tài chính: 2 video/tuần · Tự do: 4 video/tuần',
-       note:'<b>Cập nhật mới:</b> Sale được chọn 1 trong 2 loại content: <b>Content về tài chính (2 video mỗi tuần)</b> hoặc <b>Content tự do (4 video mỗi tuần)</b>. Sẽ có bot tạo video theo tài liệu hướng dẫn của team Audit để Sale lấy và upload lên TikTok, giúp hạn chế tối đa bị quét nick về nội dung. Các quy định khác giữ như cũ.',
-       req:['Chọn 1 trong 2 loại: Tài chính (2 video/tuần) hoặc Tự do (4 video/tuần)','Video lấy từ bot tạo theo tài liệu hướng dẫn của team Audit, upload lên TikTok','1 clip ngắn ≥ 15 giây + 1 clip dài 1 – 1,5 phút','Bắt buộc lộ mặt chính chủ','Cấm: trùng video Sale khác, reup, slideshow ảnh, lấy video từ Trung Thanh Group','Logo WG không bị che bởi giao diện app + outro WG + hashtag #Wegolden #WeMasterTrade #WG','TikTok ≥ 1.000 follow thật, Facebook ≥ 1.000, Zalo chính chủ','<b>Nhân sự / CTV mới:</b> sau 1 tháng gia nhập, Team Leader mới chính thức kích hoạt áp dụng KPI Content, nên nhân sự mới không bị tính thiếu điểm ở tháng đầu'],
-       score:['Đủ số video/tuần theo loại đã chọn: 50 điểm','Đủ 4 tuần/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Content KPI',purpose:'Build a personal brand with self-made content that attracts new viewers and prospects.',platform:'TikTok + Zalo + Facebook',freq:'Finance: 2 videos/week · Free: 4 videos/week',
-       note:'<b>Latest update:</b> Sales choose 1 of 2 content types: <b>Finance content (2 videos per week)</b> or <b>Free content (4 videos per week)</b>. A bot will generate videos following the Audit team’s guidance document, which Sales take and upload to TikTok to minimize account bans for content. All other rules stay the same.',
-       req:['Choose 1 of 2 types: Finance (2 videos/week) or Free (4 videos/week)','Videos come from the bot built on the Audit team’s guidance document and are uploaded to TikTok','1 short clip ≥ 15 seconds + 1 long clip of 1 – 1.5 minutes','The account owner’s face must appear','Not allowed: duplicating other Sales’ videos, reuploads, photo slideshows, videos from Trung Thanh Group','WG logo not covered by the app interface + WG outro + hashtags #Wegolden #WeMasterTrade #WG','TikTok ≥ 1,000 real followers, Facebook ≥ 1,000, own Zalo account','<b>New staff / collaborators:</b> the Team Leader officially activates the Content KPI only after the first month, so new staff are not penalized for missing points in their first month'],
-       score:['Required videos/week for the chosen type: 50 points','All 4 weeks in the month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
-    {id:'tiktok',who:'all',full:200,bonus:50,mod:'Audit',
-     vi:{name:'KPI TikTok',purpose:'Phủ thương hiệu WG trên TikTok bằng video ngắn, đăng đều đặn.',platform:'TikTok',freq:'2 video/tuần làm việc',
-       req:['<b>Nội dung tự do, không giới hạn nội dung</b>','Tự sáng tạo hoặc dùng nguồn từ Nhóm chính thức (Official Group)','Tối thiểu 10 giây','Bắt buộc logo WG','Hashtag hiện chưa bắt buộc','Bắt buộc lộ mặt'],
-       score:['2 bài/tuần: 50 điểm','8 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'TikTok KPI',purpose:'Cover TikTok with the WG brand through short, regular videos.',platform:'TikTok',freq:'2 videos/working week',
-       req:['<b>Free content, no restriction on topic</b>','Original content or material from the Official Group','At least 10 seconds','WG logo is mandatory','Hashtags not yet required','Face on camera is mandatory'],
-       score:['2 posts/week: 50 points','8 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
+     vi:{"name": "KPI Slogan", "purpose": "Thấm văn hóa và tinh thần WeGolden qua khẩu hiệu, tạo kỷ luật đều đặn mỗi tuần.", "platform": "Telegram (app)", "freq": "Thứ 2 và Thứ 4, trước 12:00", "task": ["<b>Thứ 2 và Thứ 4</b>, gửi video đọc khẩu hiệu lên app <b>trước 12:00</b>", "Hô rõ ngày/tháng/năm trong video", "Áp dụng cho SC và toàn bộ CTV"], "note": ["Khẩu hiệu do CM chọn, phù hợp với từng thị trường", "Ví dụ tại Việt Nam: “Làm việc chăm chỉ, sáng tạo, tư duy tích cực. – WeGolden số 1 Việt Nam. – Nhân viên WeGolden – đối tác WeGolden, hỗ trợ khách hàng tận tâm, kiến tạo khách hàng thịnh vượng. – Lợi nhuận của khách hàng là thành công lớn của chúng tôi. À Hu. À Hu. À Hu.”", "<b>Nếu app lỗi:</b> phải có video quay màn hình app báo lỗi thì team mới được ghi chú"], "score": ["2 bài/tuần: 50 điểm (thiếu bài: 0 điểm tuần đó)", "8 bài/tháng: 200 + 50 điểm thưởng", "Không đăng 4 tuần liên tiếp: −200"]},
+     en:{"name": "Slogan KPI", "purpose": "Instill WeGolden’s culture and spirit through the slogan, building weekly discipline.", "platform": "Telegram (app)", "freq": "Monday and Wednesday, before 12:00", "task": ["<b>Every Monday and Wednesday</b>, upload a video reciting the slogan to the app <b>before 12:00</b>", "State the date clearly in the video", "Applies to SCs and all collaborators"], "note": ["The slogan is chosen by the CM to suit each market", "Example for Vietnam: “Work hard, be creative, and think positively. – WeGolden: Number 1 in Vietnam. – WeGolden employees, WeGolden partners: dedicated support, creating prosperous customers. – Customer profit is our greatest success. A-hoo! A-hoo! A-hoo!”", "<b>If the app fails:</b> the team may only add a note if there is a screen recording of the error"], "score": ["2 posts/week: 50 points (fewer: 0 points that week)", "8 posts/month: 200 + 50 bonus points", "No posts for 4 consecutive weeks: −200"]}},
     {id:'tbcompany',who:'all',full:200,bonus:50,mod:'Audit + HR',
-     vi:{name:'KPI Teambuilding (công ty tổ chức)',purpose:'Lan tỏa hình ảnh một đội ngũ gắn kết, chuyên nghiệp ra mạng xã hội.',platform:'Zalo + Facebook',freq:'1 bài/tuần',
-       req:['Đăng nội dung họp nhóm + ảnh liên quan WG','Đủ mặt thành viên (trừ khi trợ lý & HR duyệt ngoại lệ)','Đính kèm hóa đơn và ảnh buổi họp','Lộ mặt, mặc đồng phục (hiện có thể thay bằng logo WG)','Hashtag #WeGolden #TeamBuilding + banner WG'],
-       score:['Mỗi bài: 50 điểm','4 bài/tháng: 200 + 50 điểm thưởng','4 tuần liên tiếp không đăng: −200']},
-     en:{name:'Teambuilding KPI (company-organized)',purpose:'Show a cohesive, professional team on social media.',platform:'Zalo + Facebook',freq:'1 post/week',
-       req:['Post about the team meeting + WG-related photos','All members present (unless the assistant & HR approve an exception)','Attach the receipt and meeting photos','Faces visible, uniforms worn (a WG logo may currently substitute)','Hashtags #WeGolden #TeamBuilding + WG banner'],
-       score:['Each post: 50 points','4 posts/month: 200 + 50 bonus points','4 consecutive weeks with no posts: −200']}},
+     vi:{"name": "KPI Teambuilding (công ty tổ chức)", "purpose": "Lan tỏa hình ảnh một đội ngũ gắn kết, chuyên nghiệp ra mạng xã hội.", "platform": "Mạng xã hội theo từng quốc gia", "freq": "1 bài/tuần", "task": ["Mỗi tuần đăng <b>1 bài</b> về buổi họp đội nhóm lên mạng xã hội theo quốc gia", "Kèm hình ảnh liên quan WeGolden", "Đính kèm hóa đơn và ảnh buổi họp"], "note": ["Đủ mặt thành viên (trừ khi trợ lý và HR duyệt ngoại lệ)", "Khuôn mặt nhìn rõ, mặc đồng phục hoặc dùng logo WeGolden", "Hashtag #WeGolden #TeamBuilding + banner WeGolden"], "score": ["Mỗi bài: 50 điểm", "4 bài/tháng: 200 + 50 điểm thưởng", "Không đăng 4 tuần liên tiếp: −200"]},
+     en:{"name": "Teambuilding KPI (company-organized)", "purpose": "Show a cohesive, professional team on social media.", "platform": "Social media by country", "freq": "1 post/week", "task": ["Each week, post <b>1 post</b> about the team meeting on social media in your country", "Include WeGolden-related photos", "Attach the receipt and meeting photos"], "note": ["All members present (unless the assistant and HR approve an exception)", "Faces clearly visible, in uniform or with the WeGolden logo", "Hashtags #WeGolden #TeamBuilding + WeGolden banner"], "score": ["Each post: 50 points", "4 posts/month: 200 + 50 bonus points", "No posts for 4 consecutive weeks: −200"]}},
     {id:'tbleader',who:'all',full:0,bonus:50,mod:'HR',adhoc:true,
-     vi:{name:'KPI Teambuilding (Leader tổ chức)',purpose:'Khuyến khích Leader chủ động gắn kết team, chi phí lấy từ quỹ thưởng KPI văn phòng.',platform:'Zalo',freq:'Khi có phát sinh',
-       req:['Đăng nội dung tham gia teambuilding do SC tổ chức','Đính kèm hóa đơn và ảnh, lộ mặt, đồng phục/logo WG','Hashtag #WeGolden #TeamBuilding + banner WG','Chi từ quỹ thưởng KPI văn phòng'],
-       score:['Mỗi bài phát sinh: +50 điểm']},
-     en:{name:'Teambuilding KPI (Leader-organized)',purpose:'Encourage Leaders to bond their teams proactively, funded by the office KPI bonus pool.',platform:'Zalo',freq:'As it happens',
-       req:['Post about joining a teambuilding organized by the SC','Attach receipt and photos, faces visible, uniform/WG logo','Hashtags #WeGolden #TeamBuilding + WG banner','Funded by the office KPI bonus pool'],
-       score:['Each extra post: +50 points']}}
+     vi:{"name": "KPI Teambuilding (Leader tổ chức)", "purpose": "Khuyến khích Leader chủ động gắn kết team, chi phí lấy từ quỹ thưởng KPI văn phòng.", "platform": "Mạng xã hội theo từng quốc gia", "freq": "Khi có phát sinh", "task": ["Khi có buổi teambuilding do SC tổ chức, đăng bài lên mạng xã hội theo quốc gia", "Đính kèm hóa đơn và ảnh buổi teambuilding", "Chi phí lấy từ quỹ thưởng KPI văn phòng"], "note": ["Khuôn mặt nhìn rõ", "Mặc đồng phục hoặc dùng logo WeGolden", "Hashtag #WeGolden #TeamBuilding + banner WeGolden"], "score": ["Mỗi bài phát sinh: +50 điểm", "Là điểm cộng thêm, không có chỉ tiêu bắt buộc hằng tuần", "Kiểm duyệt bởi HR"]},
+     en:{"name": "Teambuilding KPI (Leader-organized)", "purpose": "Encourage Leaders to bond their teams proactively, funded by the office KPI bonus pool.", "platform": "Social media by country", "freq": "As it happens", "task": ["When there is a teambuilding organized by the SC, post about it on social media in your country", "Attach the receipt and photos", "Funded by the office KPI bonus pool"], "note": ["Faces clearly visible", "In uniform or with the WeGolden logo", "Hashtags #WeGolden #TeamBuilding + WeGolden banner"], "score": ["Each extra post: +50 points", "Bonus points only, with no weekly target", "Reviewed by HR"]}},
+    {id:'airdrop',who:'all',full:200,bonus:50,mod:'HR',
+     vi:{"name": "KPI Airdrop", "purpose": "Tăng lượt xem và độ phủ cho các buổi livestream YouTube bằng cách chia sẻ đúng ngày diễn ra.", "platform": "Mạng xã hội theo từng quốc gia", "freq": "1 livestream/tuần · Thứ 2 – Thứ 6", "task": ["Mỗi tuần chia sẻ <b>1 bài livestream YouTube</b>", "Chia sẻ lên mạng xã hội theo quốc gia", "Thực hiện từ Thứ 2 đến Thứ 6"], "note": ["Chia sẻ đúng ngày livestream diễn ra", "Không chia sẻ vào ngày khác", "Share vào Thứ 7, Chủ nhật <b>KHÔNG</b> được tính"], "score": ["Mỗi bài: 50 điểm", "4 bài/tháng: 200 + 50 điểm thưởng", "Không đăng 4 tuần liên tiếp: −200"]},
+     en:{"name": "Airdrop KPI", "purpose": "Increase views and reach of YouTube livestreams by sharing on the day they happen.", "platform": "Social media by country", "freq": "1 livestream/week · Mon – Fri", "task": ["Each week, share <b>1 YouTube livestream</b>", "Share it on social media in your country", "Do it between Monday and Friday"], "note": ["Share on the day the livestream happens", "Do not share it on other days", "Shares on Saturday or Sunday do <b>NOT</b> count"], "score": ["Each post: 50 points", "4 posts/month: 200 + 50 bonus points", "No posts for 4 consecutive weeks: −200"]}},
+    {id:'cultural',who:'all',full:200,bonus:50,mod:'HR',
+     vi:{"name": "KPI Cultural", "purpose": "Lan tỏa nội dung chính thức về WeGolden qua mạng lưới bạn bè cá nhân của Sale.", "platform": "Mạng xã hội theo từng quốc gia", "freq": "1 bài/tuần · chốt 16:00 Thứ 2", "task": ["Mỗi tuần đăng <b>1 bài “3 sao”</b> từ nhóm “Trung Thành với WeGolden” (link nhóm theo file: t.me/yeuWeGoldenfinance)", "Đăng lên mạng xã hội cá nhân theo quốc gia, bài để chế độ Công khai", "<b>KPI Văn hóa cơ bản:</b> đăng nội dung, hình ảnh cá nhân liên quan WeGolden (cả Khối Hành chính và Kinh doanh)", "Dùng ứng dụng nhắn tin chính chủ phổ biến tại thị trường để chăm sóc khách (ví dụ Zalo ở Việt Nam)"], "note": ["Nội dung văn bản và đường link phải khớp, chính xác", "Hashtag #WeGolden + logo WeGolden; tài khoản cá nhân ≥ 1.000 bạn bè hoặc người theo dõi", "Bài 3 sao chọn theo từng quốc gia: ban đầu do CM thẩm định, sau này Team Đào tạo quyết định", "Nhóm Trung Thành đăng: sản phẩm mới, cổng thanh toán, trải nghiệm khách hàng, khuyến mãi, phân tích thị trường hằng tuần"], "score": ["Mỗi bài: 50 điểm", "4 bài/tháng: 200 + 50 điểm thưởng", "Không đăng 4 tuần liên tiếp: −200", "Chốt điểm lúc 16:00 mỗi Thứ 2"]},
+     en:{"name": "Cultural KPI", "purpose": "Spread official WeGolden content through Sales’ personal networks.", "platform": "Social media by country", "freq": "1 post/week · cutoff 16:00 Monday", "task": ["Each week, post <b>1 approved “3-star” article</b> from the “Loyalty with WeGolden” group (group link per the file: t.me/yeuWeGoldenfinance)", "Post it on your personal social media in your country, set to Public", "<b>Core Culture KPI:</b> post personal content and photos related to WeGolden (Admin and Sales staff)", "Use your own messaging app popular in the market for customer care (e.g. Zalo in Vietnam)"], "note": ["Text content and links must match accurately", "Hashtag #WeGolden + WeGolden logo; personal account with ≥ 1,000 friends or followers", "3-star articles are chosen per country: first approved by the CM, later decided by the Training Team", "The Loyalty group posts: product updates, payment gateways, client experiences, promotions, weekly market analysis"], "score": ["Each post: 50 points", "4 posts/month: 200 + 50 bonus points", "No posts for 4 consecutive weeks: −200", "Points are finalized at 16:00 every Monday"]}},
+    {id:'content',who:'all',full:200,bonus:50,mod:'Audit',
+     vi:{"name": "KPI Content", "purpose": "Xây thương hiệu cá nhân bằng nội dung tự làm, thu hút người xem mới và khách tiềm năng.", "platform": "Mạng xã hội theo từng quốc gia", "freq": "2 clip/tuần", "task": ["Mỗi tuần đăng <b>2 clip</b> lên mạng xã hội theo quốc gia", "1 clip ngắn ≥ 15 giây + 1 clip dài 1 – 1,5 phút", "Nội dung: bắt trend, hài hước hoặc kiến thức tài chính"], "note": ["Bắt buộc lộ mặt chính chủ; logo WeGolden không bị che + outro; hashtag #WeGolden #WeGolden(Country)", "Cấm: trùng clip Sale khác, reup, slideshow ảnh, lấy video từ Trung Thanh Group", "Tài khoản chính chủ, ≥ 1.000 người theo dõi thật (ví dụ ở Việt Nam: TikTok, Facebook, Zalo)"], "score": ["2 bài/tuần: 50 điểm (thiếu bài: 0 điểm tuần đó)", "8 bài/tháng: 200 + 50 điểm thưởng", "Không đăng 4 tuần liên tiếp: −200; nhân sự mới áp dụng từ sau tháng đầu, khi Team Leader kích hoạt"]},
+     en:{"name": "Content KPI", "purpose": "Build a personal brand with self-made content that attracts new viewers and prospects.", "platform": "Social media by country", "freq": "2 clips/week", "task": ["Each week, post <b>2 clips</b> on social media in your country", "1 short clip ≥ 15 seconds + 1 long clip of 1 – 1.5 minutes", "Content: trends, humor or financial knowledge"], "note": ["Own face on camera; WeGolden logo not covered + outro; hashtags #WeGolden #WeGolden(Country)", "Not allowed: duplicating other Sales’ clips, reuploads, photo slideshows, videos from Trung Thanh Group", "Own accounts with ≥ 1,000 real followers (e.g. in Vietnam: TikTok, Facebook, Zalo)"], "score": ["2 posts/week: 50 points (fewer: 0 points that week)", "8 posts/month: 200 + 50 bonus points", "No posts for 4 consecutive weeks: −200; new staff start after their first month, once the Team Leader activates it"]}},
+    {id:'tiktok',who:'all',full:200,bonus:50,mod:'Audit',
+     vi:{"name": "KPI TikTok", "purpose": "Phủ thương hiệu WeGolden trên TikTok bằng video ngắn, đăng đều đặn.", "platform": "TikTok", "freq": "2 video/tuần làm việc", "task": ["Mỗi tuần làm việc đăng <b>2 video TikTok</b>", "Mỗi video tối thiểu 10 giây", "Nguồn: tự sáng tạo, Nhóm chính thức (Official Group), hoặc nội dung tự do miễn có logo WeGolden"], "note": ["Bắt buộc logo WeGolden", "Bắt buộc lộ mặt, kể cả livestream và video tự quay", "Hashtag chưa bắt buộc; cẩn thận khi dùng lại nội dung có sẵn vì TikTok hay quét tài khoản"], "score": ["2 bài/tuần: 50 điểm (thiếu bài: 0 điểm tuần đó)", "8 bài/tháng: 200 + 50 điểm thưởng", "Không đăng 4 tuần liên tiếp: −200"]},
+     en:{"name": "TikTok KPI", "purpose": "Cover TikTok with the WeGolden brand through short, regular videos.", "platform": "TikTok", "freq": "2 videos/working week", "task": ["Each working week, post <b>2 TikTok videos</b>", "Each video at least 10 seconds", "Source: original content, the Official Group, or any free content with the WeGolden logo"], "note": ["WeGolden logo is mandatory", "Face on camera, including livestreams and self-recorded videos", "Hashtags not yet required; be careful reusing content, as TikTok often scans accounts"], "score": ["2 posts/week: 50 points (fewer: 0 points that week)", "8 posts/month: 200 + 50 bonus points", "No posts for 4 consecutive weeks: −200"]}}
   ];
   const T=k=>k[lang];
   const applies=k=>k.who==='all'||k.who===role;
@@ -1142,14 +1229,12 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
         <div><div class="kpi-title">${t.name} <span class="chev" aria-hidden="true">›</span></div><div class="kpi-sub">${t.purpose}</div></div>
         <div class="kpi-pts">${k.adhoc?'+50':k.full}<small>${k.bonus&&!k.adhoc?'+'+k.bonus+' '+L('thưởng','bonus'):(k.team?L('theo team','per team'):L('mỗi bài','per post'))}</small></div>
       </summary>
-      <div class="kpi-body">
-        ${t.warn?`<div class="callout bad small" style="grid-column:1/-1">${t.warn}</div>`:''}
-        ${t.note?`<div class="callout teal small" style="grid-column:1/-1">${t.note}</div>`:''}
-        <div><h4>${L('Yêu cầu','Requirements')}</h4><ul class="clean small">${t.req.map(r=>`<li>${r}</li>`).join('')}</ul></div>
-        <div>
-          <h4>${L('Cách chấm điểm','Scoring')}</h4><ul class="clean small">${t.score.map(r=>`<li>${r}</li>`).join('')}</ul>
-          <div class="facts" style="margin-top:12px"><span class="pill">${t.freq}</span><span class="pill teal">${t.platform}</span><span class="pill gold">${k.id==='offtrade'?L('KPI team · Leader up link','Team KPI · Leader uploads links'):whoLabel(k.who)}</span><span class="pill">${L('Kiểm duyệt','Reviewed by')}: ${k.mod}</span></div>
-        </div>
+      <div class="kpi-body kb3">
+        <div><h4 class="kbh"><span class="kbn">1</span>${L('Nhiệm vụ','Task')}</h4><ul class="clean small">${t.task.map(r=>`<li>${r}</li>`).join('')}</ul>
+          <div class="facts" style="margin-top:10px"><span class="pill">${t.freq}</span><span class="pill teal">${t.platform}</span></div></div>
+        <div><h4 class="kbh"><span class="kbn">2</span>${L('Lưu ý khi làm','Things to note')}</h4><ul class="clean small">${t.note.map(r=>`<li>${r}</li>`).join('')}</ul></div>
+        <div><h4 class="kbh"><span class="kbn">3</span>${L('Cách tính điểm','Scoring')}</h4><ul class="clean small">${t.score.map(r=>`<li>${r}</li>`).join('')}</ul>
+          <div class="facts" style="margin-top:10px"><span class="pill gold">${whoLabel(k.who)}</span><span class="pill">${L('Kiểm duyệt','Reviewed by')}: ${k.mod}</span></div></div>
       </div>
     </details>`;}).join('');
   }
@@ -1230,6 +1315,13 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
     v.textContent=ok?L('IB này đạt chuẩn, được tính 1 IB mới trong tháng.','This IB qualifies and counts as 1 new IB this month.'):L('Chưa đạt chuẩn. Bổ sung các mục còn thiếu ở trên.','Not qualified yet. Complete the missing items above.');
   }
   ['ibClients','ibDep','ibMoved'].forEach(id=>document.getElementById(id).addEventListener('input',ib));
+  function netcalc(){
+    const A=Math.max(0,+document.getElementById('netA').value||0),r=Math.max(0,+document.getElementById('netRate').value||0);
+    const nf=n=>n.toLocaleString(lang==='en'?'en-US':'vi-VN',{maximumFractionDigits:2});
+    document.getElementById('netOut').textContent='$'+nf(A*r/100);
+    document.getElementById('netFormula').textContent=`$${nf(A)} × ${nf(r)}% = $${nf(A*r/100)}`;
+  }
+  ['netA','netRate'].forEach(id=>document.getElementById(id).addEventListener('input',netcalc));
 
   /* simulator */
   const MN_VI=['T1','T2','T3','T4','T5','T6','T7','T8','T9','T10','T11','T12'];
@@ -1243,7 +1335,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
     const tenure=+document.getElementById('tenure').value;
     let standbyLeft=tenure,last=-99,tier=0,ibYear=0,back=0;
     const held=Array(12).fill(0),orig=Array(12).fill(0),refAt=Array(12).fill(-1),standby=Array(12).fill(false),refunds=Array(12).fill(null).map(()=>[]),checks=Array(12).fill(null).map(()=>[]);
-    const refund=(j,i)=>{const v=held[j];if(!v)return 0;held[j]=0;refAt[j]=i;return v;};
+    const refund=(j,i,all)=>{const v=held[j];if(!v||(v===100&&!all))return 0;held[j]=0;refAt[j]=i;return v;};
     for(let i=0;i<12;i++){
       const s=months[i];ibYear+=ibOf(s);
       if(s==='miss'){
@@ -1253,7 +1345,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
       }else{
         tier=0;
         if(s==='double'&&i>0){const v=refund(i-1,i);if(v){back+=v;refunds[i].push(L(`+${v}% lương ${MN(i-1)} · đạt gấp đôi`,`+${v}% of ${MN(i-1)} salary · 2x KPI`));}}
-        if(s==='boom'){let r=0;for(let j=0;j<i;j++)r+=refund(j,i);if(r){back+=r;refunds[i].push(L(`+${r}% · bùng nổ, hoàn toàn bộ`,`+${r}% · breakout, full refund`));}}
+        if(s==='boom'){let r=0;for(let j=0;j<i;j++)r+=refund(j,i,true);if(r){back+=r;refunds[i].push(L(`+${r}% · bùng nổ, hoàn toàn bộ`,`+${r}% · breakout, full refund`));}}
       }
       if(i%3===2){
         let q=0;for(let j=i-2;j<=i;j++)q+=ibOf(months[j]);
@@ -1316,7 +1408,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
     {id:'q1',q:['Mốc điểm tạo thị trường để nhận 100% lương là bao nhiêu?','What market-building points benchmark gives 100% of salary?'],o:[['1.650 điểm','1,650 points'],['1.237,5 điểm','1,237.5 points'],['2.050 điểm','2,050 points'],['1.400 điểm','1,400 points']],a:0,ex:['1.650 điểm = 100% lương; phần vượt quy thành tiền thưởng.','1,650 points = 100% salary; anything above becomes a cash bonus.']},
     {id:'q2',q:['Được 1.000 điểm tạo thị trường thì nhận bao nhiêu % lương?','With 1,000 market-building points, what % of salary do you receive?'],o:[['50%','50%'],['25%','25%'],['Khoảng 61%','About 61%'],['75%','75%']],a:0,ex:['Tính theo bậc: 1.000 nằm giữa 825 và 1.237,5 nên nhận 50%.','Tiers apply: 1,000 is between 825 and 1,237.5, so 50%.']},
     {id:'q3',q:['Điểm vượt mốc 1.650 được xử lý thế nào?','How are points above 1,650 handled?'],o:[['(Điểm thực tế − 1.650) = Tiền thưởng','(Actual points − 1,650) = Cash bonus'],['Bị bỏ đi','They are discarded'],['Cộng dồn sang tháng sau','Carried over to next month'],['Đổi thành vé quay số','Converted into lucky draw tickets']],a:0,ex:['Theo bảng Salary Payout ở sheet 2.','Per the Salary Payout table in sheet 2.']},
-    {id:'q4',q:['Khi tính điểm tạo thị trường, Leader KHÔNG tính KPI nào?','When calculating market-building points, which KPI do Leaders NOT count?'],o:[['KPI Telegram','Telegram KPI'],['KPI Off Trade','Off Trade KPI'],['KPI Slogan','Slogan KPI'],['KPI TikTok','TikTok KPI']],a:0,ex:['Telegram dành cho nhân viên; Off Trade dành cho Leader.','Telegram is for staff; Off Trade is for Leaders.']},
+    {id:'q4',q:['Khi tính điểm tạo thị trường, Leader KHÔNG tính KPI nào?','When calculating market-building points, which KPI do Leaders NOT count?'],o:[['KPI Telegram','Telegram KPI'],['KPI Off Trade','Off Trade KPI'],['KPI Slogan','Slogan KPI'],['KPI TikTok','TikTok KPI']],a:0,ex:['Telegram chỉ dành cho nhân viên. Off Trade là KPI chung của cả team, tính cho cả Leader và nhân viên.','Telegram is for staff only. Off Trade is a whole-team KPI that counts for both Leaders and staff.']},
     {id:'q5',q:['Tin nhắn Telegram từ tài khoản Premium có emoji Premium hoặc sticker động thì sao?','A Telegram message from a Premium account with Premium emoji or animated stickers will…'],o:[['BOT không tính vào KPI','Not be counted by the BOT'],['Được tính gấp đôi','Count double'],['Vẫn tính bình thường','Count as normal'],['Chỉ tính nửa điểm','Count as half']],a:0,ex:['Vi phạm định dạng thì BOT bỏ qua, tin nhắn = 0 KPI.','Formatting violations are ignored by the BOT and count as 0.']},
     {id:'q6',q:['Một IB đạt chuẩn cần điều kiện nào?','What makes an IB qualified?'],o:[['≥ 2 khách full verify, mỗi khách nạp ≥ $300 và trade ≥ 0,5 lot, tổng deposit ≥ $2.000','≥ 2 fully verified clients, each depositing ≥ $300 and trading ≥ 0.5 lot, total deposit ≥ $2,000'],['≥ 2 khách, mỗi khách nạp ≥ $250 và trade ≥ 1 lot, tổng deposit ≥ $3.000','≥ 2 clients, each depositing ≥ $250 and trading ≥ 1 lot, total deposit ≥ $3,000'],['1 khách nạp ≥ $2.000','1 client depositing ≥ $2,000'],['Chỉ cần đăng ký profile IB','Just registering an IB profile']],a:0,ex:['Phương án thứ hai là điều kiện của IB Sandbox, không phải IB đạt chuẩn.','The second option is the Sandbox IB condition, not a qualified IB.']},
     {id:'q7',q:['KPI khách lẻ yêu cầu Net Level 1 tối thiểu bao nhiêu mỗi tháng?','What minimum Level 1 Net does the Retail Client KPI require per month?'],o:[['$3.000','$3,000'],['$2.000','$2,000'],['$30.000','$30,000'],['$50.000','$50,000']],a:0,ex:['Kèm ít nhất 2 khách lẻ mới, mỗi khách nạp ≥ $300 và trade ≥ 0,5 lot.','Plus at least 2 new retail clients, each depositing ≥ $300 and trading ≥ 0.5 lot.']},
@@ -1444,16 +1536,15 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
     const w=v=>base>0?Math.max(0,v/base*100):0;
     document.getElementById('scBar').innerHTML=`<i class="s-fin" style="width:${w(fin)}%"></i><i class="s-held" style="width:${w(hold)}%"></i><i class="s-days" style="width:${w(unpaid)}%"></i><i class="s-lost" style="width:${w(lostMk)}%"></i>`;
     document.getElementById('scKey').innerHTML=
-      `<span><i style="background:var(--ink)"></i>${L('Thực nhận','Final salary')}</span>`+
+      `<span><i style="background:var(--ink)"></i>${L('Thực trả','Salary paid')}</span>`+
       `<span><i style="background:repeating-linear-gradient(45deg,var(--bad-soft) 0 3px,color-mix(in srgb,var(--bad) 45%,transparent) 3px 6px)"></i>${L('Giữ Net (có thể hoàn)','Net hold (recoverable)')}</span>`+
       `<span><i style="background:color-mix(in srgb,var(--ink-2) 25%,var(--sunk))"></i>${L('Ngày công không trả','Unpaid days')}</span>`+
       `<span><i style="background:repeating-linear-gradient(45deg,var(--sunk) 0 3px,color-mix(in srgb,var(--ink-2) 30%,transparent) 3px 6px)"></i>${L('Mất do KPI tạo thị trường (không hoàn)','Lost to Market-Building KPI (not recoverable)')}</span>`;
     const pct=v=>Math.round(v*100)+'%';
     document.getElementById('scSteps').innerHTML=
-      `<li><div><b>${L('KPI Sale tạo thị trường → Lương cơ bản điều chỉnh','Market-Building Sales KPI → Adjusted base salary')}</b><div class="f">${money(base)} × ${pct(mk)}</div><div class="amt">${money(adj)}</div>${lostMk>0?`<div class="f">${L('Không được nhận, không hoàn lại','Not earned, not recoverable')}: ${money(lostMk)}</div>`:''}</div></li>`+
-      `<li><div><b>${L('Ngày công thực tế → Lương thực tế','Working days → Actual earned salary')}</b><div class="f">${money(adj)} × (${fmt(ad)} / ${fmt(sd)})</div><div class="amt">${money(earned)}</div></div></li>`+
-      `<li><div><b>${L('Giữ lương theo KPI Net','Net KPI withholding')}</b><div class="f">${money(earned)} × ${pct(nr)}</div><div class="amt bad">${money(hold)}</div><div class="f">${L('HR ghi nhận là lương bị giữ, có thể hoàn lại theo chính sách phục hồi','Recorded by HR as withheld salary, subject to the recovery policies')}</div></div></li>`+
-      `<li><div><b>${L('Lương thực nhận','Final salary')}</b><div class="f">${money(earned)} − ${money(hold)}</div><div class="amt">${money(fin)}</div></div></li>`;
+      `<li><div><b>${L('KPI Sale tạo thị trường → Lương cơ bản thực tế','Market-Building Sales KPI → Actual base salary')}</b><div class="f">${money(base)} × ${pct(mk)}</div><div class="amt">${money(adj)}</div>${lostMk>0?`<div class="f">${L('Không được nhận, không hoàn lại','Not earned, not recoverable')}: ${money(lostMk)}</div>`:''}</div></li>`+
+      `<li><div><b>${L('Ngày công → Lương thực tế','Working days → Actual salary')}</b><div class="f">${money(adj)} × (${fmt(ad)} / ${fmt(sd)})</div><div class="amt">${money(earned)}</div></div></li>`+
+      `<li><div><b>${L('Giữ lương theo KPI Sales → Lương thực trả','Sales KPI withholding → Salary paid')}</b><div class="f">${L('Khoản giữ','Hold')}: ${money(earned)} × ${pct(nr)}</div><div class="amt bad">${money(hold)}</div><div class="f">${L('HR ghi nhận là lương bị giữ, có thể hoàn lại theo chính sách phục hồi','Recorded by HR as withheld salary, subject to the recovery policies')}</div><div class="f" style="margin-top:6px">${L('Lương thực trả','Salary paid')}: ${money(earned)} − ${money(hold)}</div><div class="amt">${money(fin)}</div></div></li>`;
     const b=document.getElementById('scFromMk');
     b.textContent=mkTierPct==null?'':L(`Dùng kết quả tab 2 (${mkTierPct}%)`,`Use tab 2 result (${mkTierPct}%)`);
     b.style.display=mkTierPct==null?'none':'';
@@ -1467,8 +1558,9 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
     const vis=[...document.querySelectorAll('#t3List .t3item')].filter(d=>!(role==='leader'&&d.classList.contains('only-staff'))&&!(role==='staff'&&d.classList.contains('only-leader')));
     vis.forEach((d,i)=>d.querySelector('.knum').textContent=i+1);
     const core=vis.filter(d=>d.querySelector('.pill.teal')).length;
+    const prot=vis.filter(d=>d.querySelector('.pill.good')).length;
     document.getElementById('t3Title').textContent=L(`1 · Các KPI Lương & Hoa hồng Net dành cho ${roleName(role)} (${vis.length} mục)`,`1 · Salary & Net Commission KPIs for ${roleName(role)} (${vis.length} items)`);
-    document.getElementById('t3Sum').innerHTML=L(`Hệ KPI này có tổng cộng <b>8 mục</b>; vai trò của bạn áp dụng <b>${vis.length} mục</b>, gồm <b>${core} KPI cốt lõi</b> phải đạt mỗi tháng, <b>1 chương trình Sandbox</b> cho Sale mới, <b>${vis.length-core-2} quyền lợi</b> phục hồi &amp; bảo vệ lương và <b>1 thưởng team</b>. Bấm vào từng mục để xem chi tiết.`,`This system has <b>8 items</b> in total; <b>${vis.length}</b> apply to your role, including <b>${core} core KPI${core>1?'s':''}</b> to hit every month, <b>1 Sandbox program</b> for new Sales, <b>${vis.length-core-2} recovery &amp; protection benefits</b> and <b>1 team bonus</b>. Click an item for details.`);
+    document.getElementById('t3Sum').innerHTML=L(`Vai trò của bạn áp dụng <b>${vis.length} mục</b>, chia làm 2 phần. <b>Phần Lương</b> (${core+prot} mục): ${core} KPI cốt lõi phải đạt mỗi tháng và ${prot} cơ chế bảo vệ lương. <b>Phần Net</b> (3 mục): Sandbox, thưởng net toàn team và KPI thực chiến. Mỗi mục gồm: nhiệm vụ, lưu ý khi làm và cách tính. Bấm vào từng mục để xem.`,`<b>${vis.length} items</b> apply to your role, in 2 parts. <b>Salary part</b> (${core+prot} items): ${core} core KPI${core>1?'s':''} to hit every month and ${prot} salary protection mechanisms. <b>Net part</b> (3 items): Sandbox, the team Net bonus and the live trading KPI. Each item shows the task, things to note and how it is calculated. Click an item to open it.`);
   }
   /* role switching */
   function applyRole(){
@@ -1491,7 +1583,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
     });
     document.querySelectorAll('.num-1650').forEach(el=>el.textContent=fmt(1650));
     document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false'));
-    renderTicks();applyRole();salcalc();if(typeof centerTab==='function')centerTab();ib();sim();quiz();tix();renderResult();renderCert();
+    renderTicks();applyRole();salcalc();if(typeof centerTab==='function')centerTab();ib();netcalc();sim();quiz();tix();renderResult();renderCert();
   }
   document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{
     lang=b.dataset.lang;try{localStorage.setItem('kpi-lang',lang);}catch(e){}applyLang();
