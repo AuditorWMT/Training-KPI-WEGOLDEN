@@ -1234,7 +1234,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 40px;color:var(--ink-2);fon
           <div class="facts" style="margin-top:10px"><span class="pill">${t.freq}</span><span class="pill teal">${t.platform}</span></div></div>
         <div><h4 class="kbh"><span class="kbn">2</span>${L('Lưu ý khi làm','Things to note')}</h4><ul class="clean small">${t.note.map(r=>`<li>${r}</li>`).join('')}</ul></div>
         <div><h4 class="kbh"><span class="kbn">3</span>${L('Cách tính điểm','Scoring')}</h4><ul class="clean small">${t.score.map(r=>`<li>${r}</li>`).join('')}</ul>
-          <div class="facts" style="margin-top:10px"><span class="pill gold">${whoLabel(k.who)}</span><span class="pill">${L('Kiểm duyệt','Reviewed by')}: ${k.mod}</span></div></div>
+          <div class="facts" style="margin-top:10px"><span class="pill gold">${whoLabel(k.who)}</span></div></div>
       </div>
     </details>`;}).join('');
   }
